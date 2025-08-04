@@ -1,0 +1,164 @@
+
+SEMESTR 1
+  (WAI)_Wytwarzanie_Aplikacji_Internetowych: W P
+  (ME)_Matematyka_Elementarna: W C
+  (HIH)_Hipertekst_I_Hipermedia: W L P
+  (AM)_Analiza_Matematyczna: W C
+  (HDI)_Humanistyka_Dla_Inżynierów: W
+  (PP)_Podstawy_Programowania: W L P
+  (AL)_Algebra_Liniowa: W C
+
+SEMESTR 2
+  (PEIM)_Podstawy_Elektroniki_I_Metrologii: W L
+  (PF)_Podstawy_Fizyki: W C
+  (JAI)_Język_Angielski_I: C
+  (SO)_Systemy_Operacyjne: W L
+  (MD)_Matematyka_Dyskretna: W C
+  (PO)_Programowanie_Obiektowe: W L P
+  (AISD)_Algorytmy_I_Struktury_Danych: W L P
+  (UC)_Układy_Cyfrowe: W L P
+  (WFI)_WYCHOWANIE_FIZYCZNE_I: C
+
+SEMESTR 3
+  (AK)_Architektura_Komputerów: W C L
+  (JAI)_Język_Angielski_II: C
+  (JP)_Języki_Programowania: W P
+  (BD)_Bazy_Danych: W L P
+  (GK)_Grafika_Komputerowa: W L
+  (MII)_Multimedia_I_Interfejsy: W L
+  (PAA)_Podstawy_Analizy_Algorytmów: W C
+  (FW)_Fizyka_Współczesna: W L
+  (WFI)_WYCHOWANIE_FIZYCZNE_II: C
+
+SEMESTR 4
+  (PT)_Platformy_Technologiczne: W L
+  (SOMOXII)_System_Operacyjny_MAC_OS_X_I_IOS: W L
+  (SI)_Sztuczna_Inteligencja: W L P
+  (WDC)_Wprowadzenie_Do_Cyberbezpieczeństwa: W P
+  (MN)_Metody_Numeryczne: W L P
+  (PR)_Przetwarzanie_Rozproszone: W L P
+  (SK)_Sieci_Komputerowe: W
+  (JAI)_Język_Angielski_III: C
+  (SWIM)_Systemy_Wbudowane_I_Mikroprocesory: W L
+  (MPWI)_Metody_Probabilistyczne_W_Informatyce: W C L
+
+SEMESTR 5
+  (PGI)_PROJEKT_GRUPOWY_I: P
+  (IO)_Inżynieria_Oprogramowania: W L
+  (JAI)_Język_Angielski_IV: C
+  (SK-L)_Sieci_Komputerowe_-_Laboratorium: L
+  (SAI)_Społeczne_Aspekty_Informatyki: W P
+  Systemy (Strumień)
+    (SBD)_Struktury_Baz_Danych: W P
+    (KSS)_Komputerowe_Systemy_Sterowania: W L
+    (SA)_Systemy_Agentowe: W L
+    (ASK)_Administrowanie_Systemami_Komputerowymi: W L P
+    (OS)_Oprogramowanie_Systemowe: W P
+    (KK)_Konstrukcja_Kompilatorów: W P
+  Aplikacje (Strumień)
+    (BE)_Biznes_Elektroniczny: W P
+    (WI)_Wizualizacja_Informacji: W P
+    (ASW)_Aplikacje_Systemów_Wbudowanych: W L
+    (HD)_Hurtownie_Danych: W L
+    (AUI)_Architektury_Usług_Internetowych: W L
+    (SIP)_Systemy_Informacji_Przestrzennej: W L
+
+SEMESTR 6
+  (PGI)_PROJEKT_GRUPOWY_II: P
+  (ZBS)_Zarządzanie_Bezpieczeństwem_Sieci: W L
+  (RPI)_Realizacja_Projektu_Informatycznego: W P
+  (ZFI)_Zarządzanie_Firmą_Informatyczną: W P
+  (PDII)_Projekt_Dyplomowy_Inżynierski_I: P
+  (SDII)_Seminarium_Dyplomowe_Inżynierskie_I: S
+  Systemy (Strumień)
+    (ZAK)_Zaawansowane_Architektury_Komputerów: W L
+    (LSB)_Lokalne_Sieci_Bezprzewodowe: W L
+    (MSO)_Mobilne_Systemy_Operacyjne: W L
+    (ISP)_Inżynieria_Systemów_Programowalnych: W L
+    (ST)_Systemy_Telekomunikacyjne: W L
+    (SK)_Sieci_Korporacyjne: W P
+  Aplikacje (Strumień)
+    (KSR)_Komponentowe_Systemy_Rozproszone: W L
+    (ED)_Eksploracja_Danych: W L
+    (WZR)_Wirtualne_Zespoły_Robocze: W L
+    (JO)_Jakość_Oprogramowania: W P
+    (BW)_Bazy_Wiedzy: W L
+    (BSK)_Bezpieczeństwo_Systemów_Komputerowych: W P
+
+SEMESTR 7
+  (PDII)_Projekt_Dyplomowy_Inżynierski_II: P
+  (P)_Praktyka: 
+  Systemy (Strumień)
+    Architektura systemów komputerowych (Profil)
+      (PAI)_Projektowanie_Aplikacji_Internetowych: W P
+      (SI.)_Serwisy_Internetowe_.NET: W P
+      (NIAJ)_Narzędzia_I_Aplikacje_JEE: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Inteligentne systemy interaktywne (Profil)
+      (PGK)_Projektowanie_Gier_Komputerowych: W L
+      (PO)_Przetwarzanie_Obrazów: W L
+      (DC)_Dokumenty_Cyfrowe: W P
+      (AK)_Animacja_Komputerowa: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Bazy danych (Profil)
+      (ZSBD)_Zarządzanie_Systemami_Baz_Danych: W L
+      (NBD)_Nierelacyjne_Bazy_Danych: W L
+      (PSSO)_Projektowanie_Skalowalnych_Systemów_Obiektowych: W L P
+      (ABD)_Aplikacje_Baz_Danych: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Systemy geoinformatyczne (Profil)
+      (SNSGIG)_Systemy_Nawigacji_Satelitarnej_GPS_I_Galileo: W L
+      (TWDP)_Trójwymiarowa_Wizualizacja_Danych_Przestrzennych: W L
+      (PDNPM)_Przetwarzanie_Danych_Na_Platformach_Mobilnych: W L
+      (PKC)_Podstawy_Kartografii_Cyfrowej: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Algorytmy i modelowanie systemów (Profil)
+      (RAI)_Realizacja_Aplikacji_Internetowych: W L
+      (PLA)_Programowanie_Lokalnych_Aplikacji: W P
+      (JPNP.)_Języki_Programowania_Na_Platformie_.NET: W L
+      (WPAIT)_Wybrane_Problemy_Algorytmiczne_I_Technologiczne: W S
+      (ZTO)_Zaawansowane_Techniki_Obiektowe: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Teleinformatyka (Profil)
+      (ZS)_Zarządzanie_Sieciami: W P
+      (UIAM)_Usługi_I_Aplikacje_Multimedialne: W P S
+      (ASK)_Administrowanie_Sieciami_Komputerowymi: W L
+      (SI)_Sieci_IP: W P
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+  Aplikacje (Strumień)
+    Bazy danych (Profil)
+      (ZSBD)_Zarządzanie_Systemami_Baz_Danych: W L
+      (NBD)_Nierelacyjne_Bazy_Danych: W L
+      (PSSO)_Projektowanie_Skalowalnych_Systemów_Obiektowych: W L P
+      (ABD)_Aplikacje_Baz_Danych: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Algorytmy i modelowanie systemów (Profil)
+      (RAI)_Realizacja_Aplikacji_Internetowych: W L
+      (PLA)_Programowanie_Lokalnych_Aplikacji: W P
+      (JPNP.)_Języki_Programowania_Na_Platformie_.NET: W L
+      (WPAIT)_Wybrane_Problemy_Algorytmiczne_I_Technologiczne: W S
+      (ZTO)_Zaawansowane_Techniki_Obiektowe: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Architektura systemów komputerowych (Profil)
+      (PAI)_Projektowanie_Aplikacji_Internetowych: W P
+      (SI.)_Serwisy_Internetowe_.NET: W P
+      (NIAJ)_Narzędzia_I_Aplikacje_JEE: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Inteligentne systemy interaktywne (Profil)
+      (PGK)_Projektowanie_Gier_Komputerowych: W L
+      (PO)_Przetwarzanie_Obrazów: W L
+      (DC)_Dokumenty_Cyfrowe: W P
+      (AK)_Animacja_Komputerowa: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Teleinformatyka (Profil)
+      (ZS)_Zarządzanie_Sieciami: W P
+      (UIAM)_Usługi_I_Aplikacje_Multimedialne: W P S
+      (ASK)_Administrowanie_Sieciami_Komputerowymi: W L
+      (SI)_Sieci_IP: W P
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
+    Systemy geoinformatyczne (Profil)
+      (SNSGIG)_Systemy_Nawigacji_Satelitarnej_GPS_I_Galileo: W L
+      (TWDP)_Trójwymiarowa_Wizualizacja_Danych_Przestrzennych: W L
+      (PDNPM)_Przetwarzanie_Danych_Na_Platformach_Mobilnych: W L
+      (PKC)_Podstawy_Kartografii_Cyfrowej: W L
+      (SDII)_Seminarium_Dyplomowe_Inżynierskie_II: S
