@@ -5,9 +5,10 @@
 2. [Przykład uniwersalny](#przykład-uniwersalny)
 3. [Przykład konkretny](#przykład-konkretny-na-przykładzie-podstaw-programowania)
 4. [Przykład pisania tutoriali](#przykład-pisania-tutoriali-na-semestr)
-5. [Pomysły na przyszłość](#pomysły-na-przyszłość)
+5. [Pomysły na przyszłość - przeniesione do issues](https://github.com/Billypl/PaczkownicyInfaPG/issues)
 
 ## Ogólne
+### Do folderu "stara paczka" nie wrzucamy paczki z poprzednich lat!! - tylko przedawnione / nieaktualne rzeczy
 W nazwach folderów stosujemy snake_case, polskie znaki i zaczynamy je od małej litery. Na samym początku umieszczamy akronim (AKO, WAI)
 
 W nazwach plików stosujemy snake_case, polskie znaki oraz następujące skróty:
@@ -52,7 +53,8 @@ Struktura folderu:
 │
 ├── opracowania/
 │   ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_notatki].pdf
-│   └── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
+│   ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
+│   └── [SKRÓT_PRZEDMIOTU]_[rok]_anki.apkg
 │
 ├── laboratoria/
 │   ├── wspólne/
@@ -99,6 +101,7 @@ Struktura folderu:
 │       └── PP_2022_kol_1_ostrowski_grupa_a.pdf
 │
 ├── opracowania/
+|   ├── PP_2022_anki.apkg
 │   └── PP_2022_przed_egzaminem_pawiłojć.pdf
 │
 ├── laboratoria/
@@ -154,18 +157,3 @@ Struktura folderu:
     3.7. Projekt  
 5. Sekcja podsumowująca jak zdać i na co zwrócić największą uwagę + protipy  
 ```
-
-## Pomysły na przyszłość
-
-Co do samej paki to przydatne byłyby foldery/pliki ogólne:
-- tutoriale jak pisać pakę (szablon)
-- ranking wykładowców
-- linki między-semestralne (etrapez, linki do książek z angielskiego)
-- przydatne linki do yt / githubów między-semestralnych
-- tutoriale, jak obsługiwać .anki, .typ, .tex, .md
-- tutorial-wstęp do studiów (co z czym się je)
-- folder memy/ na każdy sem
-- spis z nagraniami na każdy sem (jeśli są)
-- paczki z innych kierunków
-- struktura dc i protipy przy jego tworzeniu
-- protipy dla starosty / starostów
