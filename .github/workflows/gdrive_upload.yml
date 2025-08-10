@@ -36,5 +36,5 @@ jobs:
       - name: Upload to Google Drive  
         env:
           LOCAL_FOLDER: paczka
-        run: pwd && tree . -L 2 && python .github/workflows_scripts/update_drive.py
+        run: pwd && tree . -L 2 && python .github/workflows_scripts/gdrive_upload/gdrive_update.py
         working-directory: ${{ github.workspace }}

@@ -11,7 +11,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 API_TYPE = 'drive'
 API_VERSION = 'v3'
 
-LOCAL_FOLDER = os.getenv("LOCAL_FOLDER", "../../paczka")
+LOCAL_FOLDER = os.getenv("LOCAL_FOLDER", "../../../paczka")
 GDRIVE_FOLDER_ID = '1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv'
 
 def main():

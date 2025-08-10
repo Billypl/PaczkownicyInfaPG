@@ -1,3 +1,13 @@
+# --------- Credentials.gitignore starts here ---------
+
+credentials.json
+credentials_b64.txt
+token_drive_v3.pickle
+token_b64.txt
+github-paczka-secrets-PAT.txt
+
+# --------- Credentials.gitignore ends here ---------
+
 
 # --------- Python.gitignore starts here ---------
 
