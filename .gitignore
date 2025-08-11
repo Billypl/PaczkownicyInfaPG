@@ -8,3 +8,4 @@ token_b64.txt
 # other
 utility/.gitignore
 utility/.gitignore.temp
+*:Zone.Identifier

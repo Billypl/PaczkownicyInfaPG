@@ -7,7 +7,24 @@
 4. [Uwagi](#uwagi) (na co warto zwrócić uwagę)
 
 ## Tutorial wideo na YouTube:
-Na tym kanale pojawi się tutorial wprowadzający do całego repo: https://www.youtube.com/@billy.d3v
+https://www.youtube.com/watch?v=tuTGdGo7trQ
+
+Spis treści:  
+00:00:00 - [intro](https://youtu.be/tuTGdGo7trQ?t=0)  
+00:01:24 - [geneza problemu](https://youtu.be/tuTGdGo7trQ?t=85)  
+00:03:33 - [jak to działa?](https://youtu.be/tuTGdGo7trQ?t=214)  
+00:07:32 - [omówienie repozytorium](https://youtu.be/tuTGdGo7trQ?t=452)  
+00:12:23 - [wrzucanie plików](https://youtu.be/tuTGdGo7trQ?t=743)  
+00:23:41 - [wrzucanie projektów](https://youtu.be/tuTGdGo7trQ?t=1422)  
+00:31:57 - [publikowanie zmian](https://youtu.be/tuTGdGo7trQ?t=2517)  
+00:48:14 - [logowanie do GH przez konsolę](https://youtu.be/tuTGdGo7trQ?t=2895)  
+00:52:03 - [bonus - aktualizacja (pull)](https://youtu.be/tuTGdGo7trQ?t=3123)  
+00:56:17 - [wystawianie pull requesta](https://youtu.be/tuTGdGo7trQ?t=3376)  
+01:01:48 - [poprawianie pull requesta](https://youtu.be/tuTGdGo7trQ?t=3709)  
+01:09:36 - [protipy dla windowsiarzy](https://youtu.be/tuTGdGo7trQ?t=4176)  
+01:11:01 - [outro](https://youtu.be/tuTGdGo7trQ?t=4261)  
+
+
 
 ## Tutorial - w terminalu:
 Nazwy z dużych liter (np. YOUR_BRANCH_NAME) muszą być uzupełnione faktycznymi nazwami.

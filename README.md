@@ -1,18 +1,19 @@
 # Paczka Updater
 
-Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na [google drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing). Dajcie gwiazdkę na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
+Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na [google drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing). Dajcie gwiazdkę ⭐ na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
 
 Pozdrawiają,  
 *koledzy z poprzednich lat*
 
-![project cover](/docs/glowne_readme/Bez%20nazwy-2.png)
+![project cover](/docs/glowne_readme/repo_cover.png)
 
+![OBSZERNY Tutorial YouTube z timestampami](https://www.youtube.com/watch?v=tuTGdGo7trQ) 
 
 Paczka Google Drive: https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing
 
 ## Ważne!! - przeczytać przed dodawaniem do paczki:
 
-**Na kanale yt (https://www.youtube.com/@billy.d3v) pojawi się tutorial all-in-one.** Zachęcam do obserwowania.
+**[Tutorial all-in-one.](https://www.youtube.com/watch?v=tuTGdGo7trQ)** Zachęcam do subskrybcji.  
 
 Przed dodawaniem do paczki przeczytać:
 1. [Jak dodawać do paczki?](docs/udzial_w_paczce/udzial_w_paczce.md)  
@@ -39,9 +40,11 @@ Aktualny postęp paczki można zobaczyć w podanych poniżej issuse'ach:
 - [ ] [SEM7](https://github.com/Billypl/PaczkownicyInfaPG/issues/26) - x/x
 
 ## Uwagi
+- Przeczytać [wytyczne](/docs/wytyczne/wytyczne.md)! To jest bardzo ważne w celu minimalizacji poprawek!!
 - Puste foldery działają jak w githubie (nie są przesyłane). Jeżeli chcecie wysłać pusty folder, to stwórzcie plik ".gitkeep". Zostanie on usunięty automatycznie przed uploadem na gdrive.  
 - Odchudzić foldery ze wszystkich plików *.bin, *.exe etc. - w celu ułatwienia tego został stworzony [gitignore-generator](utility/gitignore-generator.sh) ([link do oficjalnego repo](https://github.com/Billypl/GitignoreGenerator)) do znalezienia w folderze [utility](utlility/). W celu zapoznania się z działaniem należy użyć flagi -h. Skrypt pozwala na szybkie generowanie .gitignore'ów łączących różne technologie. Tak wygenerowany .gitignore należy umieścić w **folderze projektu** (nie w głównym .gitignore repo), który jest wrzucany do paczki, aby uniknąć wrzucania niepotrzebnych plików. **W takim wypadku nie trzeba niczego usuwać ręcznie ze swojego dysku.**  
-- Folder **Stara Paczka** służy tylko na **NIEAKTUALNE** materiały (np. zmieniła się forma / prowadzący) 
+- Folder **Stara Paczka** służy tylko na **NIEAKTUALNE** materiały (np. zmieniła się forma / prowadzący)  
+- 
 
 ## Użyte projekty
 - https://github.com/Billypl/GithubGDriveSync
