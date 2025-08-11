@@ -1,5 +1,7 @@
 # Paczka Updater
 
+Paczka Google Drive: https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing
+
 Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na [google drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing). Dajcie gwiazdkę ⭐ na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
 
 Pozdrawiają,  
@@ -7,9 +9,12 @@ Pozdrawiają,
 
 ![project cover](/docs/glowne_readme/repo_cover.png)
 
-![OBSZERNY Tutorial YouTube z timestampami](https://www.youtube.com/watch?v=tuTGdGo7trQ) 
+## Paczka Tutorial all-in-one
+https://youtu.be/tuTGdGo7trQ
+[![Watch the video](https://img.youtube.com/vi/tuTGdGo7trQ/maxresdefault.jpg)](https://youtu.be/tuTGdGo7trQ)
 
-Paczka Google Drive: https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing
+
+
 
 ## Ważne!! - przeczytać przed dodawaniem do paczki:
 

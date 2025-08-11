@@ -7,7 +7,9 @@
 4. [Uwagi](#uwagi) (na co warto zwrócić uwagę)
 
 ## Tutorial wideo na YouTube:
-https://www.youtube.com/watch?v=tuTGdGo7trQ
+[![Paczka Tutorial all-in-one](https://img.youtube.com/vi/tuTGdGo7trQ/maxresdefault.jpg)](https://youtu.be/tuTGdGo7trQ)
+
+### [Paczka Tutorial all-in-one](https://youtu.be/tuTGdGo7trQ)
 
 Spis treści:  
 00:00:00 - [intro](https://youtu.be/tuTGdGo7trQ?t=0)  
