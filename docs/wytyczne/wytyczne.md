@@ -36,9 +36,8 @@ Najlepiej w takim wypadku dodać OCRa dla lepszego wyszukiwania / przepisać do 
 Wyjątek stanowią pliki czysto tekstowe, jak np. linki - przy nich stosujemy rozszerzenie *.txt.
 Drugim wyjątkiem są pliki typu szablon sprawozdania, gdzie wygodny jest np. format *.docx albo *.xlsx.
 
-- Przy opracowaniach, które zostały skompilowane z np. *.tex lub *.typ w folderze sources/ wrzucamy źródło, a kompilowanego *.pdf'a wrzucamy do normalnego folderu. Struktura wtedy powinna wyglądać tak (TODO: wybierz wersję):  
+- Przy opracowaniach, które zostały skompilowane z np. *.tex lub *.typ w folderze sources/ wrzucamy źródło, a kompilowanego *.pdf'a wrzucamy do normalnego folderu. Struktura wtedy powinna wyglądać tak:  
 
-v1  
 ```
 opracowania/
 ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
@@ -46,26 +45,7 @@ opracowania/
     └── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]/
         ├── image1.png
         ├── image2.png
-        └── main.tex
-```
-v2
-```
-opracowania/
-├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
-└── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]_sources/
-    ├── image1.png
-    ├── image2.png
-    └── main.tex
-```
-v3
-```
-opracowania/
-└── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]/
-    ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
-    └── sources/
-        ├── image1.png
-        ├── image2.png
-        └── main.tex
+        └── main.tex / main.md / main.typ
 ```
 
 - I jeszcze raz ważna rzecz - **jeśli jakieś materiały się przedawniły** (zmiana zakresu przedmiotu, zmiana jego nazwy, zmiana prowadzącego, zmiana systemu oceniania, zmiana wymagane materiału) to NIE USUWAMY ich, tylko dajemy w folder stara_paczka/ **W KAŻDYM PRZEDMIOCIE Z OSOBNA**
@@ -88,7 +68,12 @@ Struktura folderu:
 ├── opracowania/
 │   ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_notatki].pdf
 │   ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
-│   └── [SKRÓT_PRZEDMIOTU]_[rok]_anki.apkg
+│   ├── [SKRÓT_PRZEDMIOTU]_[rok]_anki.apkg
+│   └── sources/
+│       └── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]/
+│           ├── image1.png
+│           ├── image2.png
+│           └── main.tex / main.md / main.typ
 │
 ├── laboratoria/
 │   ├── wspólne/
@@ -138,7 +123,12 @@ Struktura folderu:
 │
 ├── opracowania/
 |   ├── PP_2022_anki.apkg
-│   └── PP_2022_przed_egzaminem_pawiłojć.pdf
+│   ├── PP_2022_przed_egzaminem_pawiłojć.pdf
+│   └── sources/
+│       └── PP_2022_przed_egzaminem_pawiłojć/
+│           ├── image1.png
+│           ├── image2.png
+│           └── main.tex / main.md / main.typ
 │
 ├── laboratoria/
 │   ├── wspólne/
