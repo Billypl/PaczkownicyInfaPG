@@ -8,35 +8,67 @@
 5. [Pomysły na przyszłość - przeniesione do issues](https://github.com/Billypl/PaczkownicyInfaPG/issues)
 
 ## Ogólne
-### Do folderu "stara paczka" nie wrzucamy paczki z poprzednich lat!! - tylko przedawnione / nieaktualne rzeczy
-W nazwach folderów stosujemy snake_case, polskie znaki i zaczynamy je od małej litery. Na samym początku umieszczamy akronim (AKO, WAI)
 
-W nazwach plików stosujemy snake_case, polskie znaki oraz następujące skróty:
-    - zadanie -> zad
-    - domowe -> dom
-    - ćwiczenia -> cw
-    - laboratorium -> lab
+- **Do folderu "stara paczka" nie wrzucamy paczki z poprzednich lat!! - tylko przedawnione / nieaktualne rzeczy.**  
 
-Ogólnie nie stosujemy dużych liter
+- Stosujemy rok akademicki - tzn. jeżeli semestr jest nieparzysty i egzamin jest "w następnym roku", to używamy roku akademickiego (dotyczy również poprawek i trzecich terminów).   
+*Np. jeżeli przedmiot zaczął się w **październiku 2022**, a egzamin był w **lutym 2023**, to używamy daty **2022**.*
 
-Innych skrótów nie stosuje się
-Jeżeli nie znamy jakiejś informacji, np. roku pisania kolokwium, to zaznaczamy to placeholderem:
-    - rok -> xxxx, np. xxxx_grupa_a.pdf
-    - grupa -> x, np. 2024_grupa_x.pdf
-    - prowadzący -> x
+- W nazwach folderów stosujemy snake_case, polskie znaki i zaczynamy je od małej litery (wyjątkiem są akronimy przedmiotów). Na samym początku umieszczamy akronim (AKO, WAI)
 
-Preferowanym formatem pliku jest .pdf i należy go używać wszędzie, gdzie jest to możliwe.
-Wyjątek stanowią pliki czysto tekstowe, jak np. linki - przy nich stosujemy rozszerzenie .txt
-Drugim wyjątkiem są pliki typu template sprawozdania, gdzie wygodny jest np. format .docx albo .xlsx
+- Spis skrótów:  
+    - zadanie -> zad  
+    - domowe -> dom  
+    - ćwiczenia -> cw  
+    - laboratorium -> lab  
 
-Przy opracowaniach, które zostały skompilowane z np. *.tex lub .typ w folderze sources/ wrzucamy źródło, a kompilowanego *.pdf'a wrzucamy do normalnego folderu.
+- Jeżeli nie znamy jakiejś informacji, np. roku pisania kolokwium, to zaznaczamy to placeholderem:  
+    - rok -> xxxx, np. xxxx_grupa_a.pdf  
+    - grupa -> x, np. 2024_grupa_x.pdf  
+    - prowadzący -> x  
 
-Jeżeli mamy kilka np. zdjęć jednego egzaminu, to łączymy je w jednego pdfa, żeby uniknąć bałaganu. 
-Najlepiej w takim wypadku dodać OCRa dla lepszego wyszukiwania / przepisać do anek / uzupełnić do sprawozdania 
+- Jeżeli mamy kilka np. zdjęć jednego egzaminu, to łączymy je w jednego pdfa, żeby uniknąć bałaganu. 
+Najlepiej w takim wypadku dodać OCRa dla lepszego wyszukiwania / przepisać do anek / uzupełnić do sprawozdania. 
 
-Niezależnie od tego, czy kod mieści się w jednym pliku czy potrzebnych jest kilka, wrzucamy je w folder nazwany np. `lab[numer].cpp`
+- Niezależnie od tego, czy kod mieści się w jednym pliku czy potrzebnych jest kilka, wrzucamy je w folder nazwany np. `lab0[numer]`
 
-I ważna rzecz - **jeśli jakieś materiały się przedawniły** (zmiana zakresu przedmiotu, zmiana jego nazwy, zmiana prowadzącego, zmiana systemu oceniania, zmiana wymagane materiału) to NIE USUWAMY ich, tylko dajemy w folder stara_paczka/ **W KAŻDYM PRZEDMIOCIE Z OSOBNA**
+- Preferowanym formatem pliku jest *.pdf i należy go używać wszędzie, gdzie jest to możliwe, najlepiej z OCRem.
+Wyjątek stanowią pliki czysto tekstowe, jak np. linki - przy nich stosujemy rozszerzenie *.txt.
+Drugim wyjątkiem są pliki typu szablon sprawozdania, gdzie wygodny jest np. format *.docx albo *.xlsx.
+
+- Przy opracowaniach, które zostały skompilowane z np. *.tex lub *.typ w folderze sources/ wrzucamy źródło, a kompilowanego *.pdf'a wrzucamy do normalnego folderu. Struktura wtedy powinna wyglądać tak (TODO: wybierz wersję):  
+
+v1  
+```
+opracowania/
+├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
+└── sources/
+    └── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]/
+        ├── image1.png
+        ├── image2.png
+        └── main.tex
+```
+v2
+```
+opracowania/
+├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
+└── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]_sources/
+    ├── image1.png
+    ├── image2.png
+    └── main.tex
+```
+v3
+```
+opracowania/
+└── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania]/
+    ├── [SKRÓT_PRZEDMIOTU]_[rok]_[temat_opracowania].pdf
+    └── sources/
+        ├── image1.png
+        ├── image2.png
+        └── main.tex
+```
+
+- I jeszcze raz ważna rzecz - **jeśli jakieś materiały się przedawniły** (zmiana zakresu przedmiotu, zmiana jego nazwy, zmiana prowadzącego, zmiana systemu oceniania, zmiana wymagane materiału) to NIE USUWAMY ich, tylko dajemy w folder stara_paczka/ **W KAŻDYM PRZEDMIOCIE Z OSOBNA**
 
 ## Przykład uniwersalny
 Struktura folderu:

@@ -49,7 +49,6 @@ Aktualny postęp paczki można zobaczyć w podanych poniżej issuse'ach:
 - Puste foldery działają jak w githubie (nie są przesyłane). Jeżeli chcecie wysłać pusty folder, to stwórzcie plik ".gitkeep". Zostanie on usunięty automatycznie przed uploadem na gdrive.  
 - Odchudzić foldery ze wszystkich plików *.bin, *.exe etc. - w celu ułatwienia tego został stworzony [gitignore-generator](utility/gitignore-generator.sh) ([link do oficjalnego repo](https://github.com/Billypl/GitignoreGenerator)) do znalezienia w folderze [utility](utlility/). W celu zapoznania się z działaniem należy użyć flagi -h. Skrypt pozwala na szybkie generowanie .gitignore'ów łączących różne technologie. Tak wygenerowany .gitignore należy umieścić w **folderze projektu** (nie w głównym .gitignore repo), który jest wrzucany do paczki, aby uniknąć wrzucania niepotrzebnych plików. **W takim wypadku nie trzeba niczego usuwać ręcznie ze swojego dysku.**  
 - Folder **Stara Paczka** służy tylko na **NIEAKTUALNE** materiały (np. zmieniła się forma / prowadzący)  
-- 
 
 ## Użyte projekty
 - https://github.com/Billypl/GithubGDriveSync
