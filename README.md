@@ -1,4 +1,15 @@
+
+
+[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][contributors-url]
+
 # Paczka Updater
+[![YouTubeViews][youtube-views-shield]][youtube-url]
+[![OfficialDiscord][discord-shield]][discord-url]
+
+
 
 Paczka Google Drive: https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing
 
@@ -53,3 +64,30 @@ Aktualny postęp paczki można zobaczyć w podanych poniżej issuse'ach:
 ## Użyte projekty
 - https://github.com/Billypl/GithubGDriveSync
 - https://github.com/Billypl/GitignoreGenerator
+- https://gist.github.com/jagrosh/5b1761213e33fc5b54ec7f6379034a22
+- https://github.com/SilasRodrigues19/Portfolio/blob/main/README.md
+- https://shields.io/badges/
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/Billypl/PaczkownicyInfaPG.svg?style=for-the-badge
+[contributors-url]: https://github.com/Billypl/PaczkownicyInfaPG/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/Billypl/PaczkownicyInfaPG?style=for-the-badge
+[forks-url]: https://github.com/Billypl/PaczkownicyInfaPG/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/Billypl/PaczkownicyInfaPG?style=for-the-badge
+[stars-url]: https://github.com/Billypl/PaczkownicyInfaPG/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/Billypl/PaczkownicyInfaPG.svg?style=for-the-badge
+[issues-url]: https://github.com/Billypl/PaczkownicyInfaPG/issues
+
+[youtube-views-shield]: https://img.shields.io/youtube/views/tuTGdGo7trQ?style=for-the-badge&logo=youtube&logoColor=red&label=tutorial%20views
+[youtube-url]: https://youtu.be/tuTGdGo7trQ?si=UmZ2PyprnpxvG76_
+
+[discord-shield]: https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2
+[discord-url]: https://discord.gg/8MVeYzChkT  
+
+<br><hr>
+[🔼 Back to top](#paczka-updater)
