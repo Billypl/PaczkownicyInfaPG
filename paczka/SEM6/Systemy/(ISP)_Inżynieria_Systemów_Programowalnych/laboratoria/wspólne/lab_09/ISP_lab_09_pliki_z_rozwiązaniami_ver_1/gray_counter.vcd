@@ -1,0 +1,167 @@
+$date
+     Apr 07, 2025       14:26:10
+$end
+
+$version
+ SystemC 3.0.0-Accellera --- Oct  7 2024 17:21:37
+$end
+
+$timescale
+     1 ps
+$end
+
+$scope module SystemC $end
+$var wire    1  aaaaa  clock       $end
+$var wire    1  aaaab  reset       $end
+$var wire    3  aaaac  led_o [2:0]  $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+1aaaaa
+0aaaab
+b1 aaaac
+$end
+
+#5000
+0aaaaa
+
+#10000
+1aaaaa
+1aaaab
+b0 aaaac
+
+#15000
+0aaaaa
+
+#20000
+1aaaaa
+
+#25000
+0aaaaa
+
+#30000
+1aaaaa
+0aaaab
+b1 aaaac
+
+#35000
+0aaaaa
+
+#40000
+1aaaaa
+b11 aaaac
+
+#45000
+0aaaaa
+
+#50000
+1aaaaa
+b10 aaaac
+
+#55000
+0aaaaa
+
+#60000
+1aaaaa
+b110 aaaac
+
+#65000
+0aaaaa
+
+#70000
+1aaaaa
+b111 aaaac
+
+#75000
+0aaaaa
+
+#80000
+1aaaaa
+b101 aaaac
+
+#85000
+0aaaaa
+
+#90000
+1aaaaa
+b100 aaaac
+
+#95000
+0aaaaa
+
+#100000
+1aaaaa
+b0 aaaac
+
+#105000
+0aaaaa
+
+#110000
+1aaaaa
+b1 aaaac
+
+#115000
+0aaaaa
+
+#120000
+1aaaaa
+b11 aaaac
+
+#125000
+0aaaaa
+
+#130000
+1aaaaa
+b10 aaaac
+
+#135000
+0aaaaa
+
+#140000
+1aaaaa
+b110 aaaac
+
+#145000
+0aaaaa
+
+#150000
+1aaaaa
+b111 aaaac
+
+#155000
+0aaaaa
+
+#160000
+1aaaaa
+b101 aaaac
+
+#165000
+0aaaaa
+
+#170000
+1aaaaa
+b100 aaaac
+
+#175000
+0aaaaa
+
+#180000
+1aaaaa
+b0 aaaac
+
+#185000
+0aaaaa
+
+#190000
+1aaaaa
+b1 aaaac
+
+#195000
+0aaaaa
+
+#200000

@@ -1,0 +1,655 @@
+\documentclass[12pt]{scrartcl}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{makecell}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{pgfplots}
+	\pgfplotsset{compat=1.15}
+\usepackage{xifthen}
+\usepackage{enumitem}
+\usepackage{titletoc,tocloft}
+	\cftsetindents{section}{0in}{0.2in}
+	\cftsetindents{subsection}{0in}{0.4in}
+	\cftsetindents{subsubsection}{0in}{0.6in}
+	\cftsetindents{paragraph}{0in}{0.8in}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\usepackage{pgfkeys}
+\pgfkeys{
+	/splot/.is family, /splot,
+	default/.style = 
+	{xlabel = $k$, ylabel = $h$},
+	xlabel/.estore in = \xlabel,
+	ylabel/.estore in = \ylabel,
+}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{4}
+
+\newcommand{\link}[2]{
+	\hyperref[#1]{\textit{\underline{#2}}}
+}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\fancy}[1]{\mathcal{#1}}
+\newcommand{\macierz}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\bgcolor}[2]{\colorbox{#1!30}{#2}}
+
+\newcommand\mysplot[2][]{%
+	\pgfkeys{#1}%
+	...
+}
+\newcommand{\notka}[1]{
+	\textcolor{gray}{\textbf{Notka:\\\indent} #1}
+}
+\setlength{\parskip}{0cm}
+
+\newcommand{\splot}[3][]{
+	\pgfkeys{/splot, default, #1}
+	\begin{tikzpicture}
+	\begin{axis}[
+	xmin = -5,
+	xmax = 10,
+	ymin = -3,
+	ymax = 3,
+	axis lines = middle,
+	axis line style = {->},
+	xlabel = $\xlabel$,
+	ylabel = $\ylabel$,
+	xtick = data,
+	ytick = data,
+	x tick label style = {
+		color=black,
+	},
+	title = {#2},
+	title style = {font=\bfseries},
+	]
+	\addplot+[ybar, black, fill=black, mark=none, opacity=0.35] plot coordinates {#3};
+	\end{axis}
+	\end{tikzpicture}
+}
+\newcommand{\rownaniezmacierzax}[5]{
+	\bgcolor{YellowGreen}{#1} &= \bgcolor{Yellow}{#2}\bgcolor{YellowGreen}{#3} + \bgcolor{Dandelion}{#4}\cdot\bgcolor{Turquoise}{#5}
+}
+\newcommand{\rownaniezmacierzaysimple}[3]{
+	\bgcolor{Orchid}{#1} &= \bgcolor{Red}{#2}\bgcolor{YellowGreen}{#3}
+}
+\newcommand{\m}{\phantom{-}}
+
+\title{Komputerowe Systemy Sterowania}
+\subtitle{opracowanie}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+	\textcolor{white}{
+	$$\fancy{PISANE\ KRWIA\ I\ LZAMI,\ BYSCIE\ WY\ CIERPIEC\ NIE\ MUSIELI}$$
+}
+\end{center}
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Wstęp}
+Opracowanie ma na celu uporządkować wiedzę z innych opracowań, która jest niezbędna do tego przedmiotu.\\ Opracowanie.pdf oraz Opracowanie2.pdf zawierają dodatkowe opisy niektórych zagadnień, więc warto tam poszukać, jeśli nie zrozumieliście czegoś z tego opracowania.
+
+
+\section{Wzory}
+	\subsection{Splot}
+    	Układu $\fancy{LNP}$:
+    		\begin{equation}\label{eq:splot}
+    			y(n)=\sum_{k=0}^{n} u(k)h(n-k) = \sum_{k=0}^{n} u(n-k)h(k)=u(n)*h(n)
+    		\end{equation}
+    	Układu $\fancy{LN}$:
+    		\begin{equation}
+    			y(n)=\sum_{-\infty}^{\infty} u(k)h(n-k) = \sum_{-\infty}^{\infty} u(n-k)h(k)=u(n)*h(n)
+    		\end{equation}
+
+	\subsection{Równanie stanu}\label{eq:rownanie_stanu}
+	\begin{equation}
+		\begin{cases}
+		x(n+1) &= Ax(n) + Bu(n) + B_{w}w(n)\\
+		y(n) &= Cx(n) + Du(n) + D_{v}v(n)
+		\end{cases}
+	\end{equation}\\
+	
+	\textbf{Oznaczenia}:\\
+	$A$ -- zestaw wektorów decydujących o przejściu do następnego stanu (macierz tranzycji $x$),
+	\\$B$ -- macierz wejścia/sterowania,
+	\\$C$ -- macierz obserwacji/ wyjścia,
+	\\$D$ -- macierz równa 0 nie istniejąca w naturze wystepuje w układach 
+	analogowych; w układach dyskretnych nie powinno występować, ale czasem 
+	się zdarza, że istnieje ze względu na szumy,
+	\\$B_w$, $D_u$ -- macierze oddziaływania zakłóceń,
+	\\$x+1$ -- reprezentuje następny stan -- wyliczamy go na podstawie poprzedniego stanu,
+	\\$w$, $v$ -- sygnały przypadkowe. 
+	\\
+\notka{
+	Z pełnego równania jednak zadań nie ma z tego co wiem, poza podaniem wzoru, więc oto uproszczone równanie stanu:\\
+}
+	\label{eq:rownanie_stanu_uproszczone}
+	\begin{equation}
+		\begin{cases}
+			x(n+1) &= Ax(n) + Bu(n)\\
+			y(n) &= Cx(n) + Du(n)
+		\end{cases}
+	\end{equation}\\
+
+\subsection{Równanie różnicowe}\label{eq:rownanie_roznicowe}
+	\begin{equation}
+		y(n) = \sum\limits_{i=0}^{N}a_iu(n-i)
+	\end{equation}
+
+
+
+
+\section{Definicje}
+	\subsection{Niezmienniczość}\label{sec:niezmienniczosc}
+	
+	$\fancy{R}: u(n)=y(n)=0 $ dla $ n<0 $ (stan spoczynku)\\
+	$\fancy{R} \in \fancy{N} \Leftrightarrow
+	\forall_u\forall_n \Big( y(n)=\fancy{R}u(n) \Rightarrow \forall_{k>0} \big( y(n-k)=\fancy{R}u(n-k)\big) \Big)$\\
+	
+	Niezależnie od czasu, kiedy podamy sygnał, układ na wyjściu zawsze udzieli tej samej odpowiedzi.
+	Niezmienniczość to niezmienność działania.\\\\
+\notka{
+	Czas nie ma wpływu na wynik, liczy się tylko wejście i odpowiedź układu.
+	\\Aby zamodelować układ $LP$ (nie: $LNP$), można zastosować \code{srand(time(NULL))}.
+}
+	\subsection{Liniowość}\label{sec:liniowosc}
+	$ \fancy{R} \in \fancy{L} \Leftrightarrow w.l. $ (warunek liniowy)
+	
+	
+	\[ w.l.
+		\begin{cases}
+		 	$$\fancy{R} \alpha u = \alpha \fancy{R}u\\
+			\fancy{R} [ u_1 + u_2 ] = \fancy{R}u_1 + \fancy{R}u_2$$
+		\end{cases}
+	\]
+	
+	\[ w.l.
+		\begin{cases}
+			$$ \fancy{R}[ \alpha u_1 + \beta u_2 ] = \alpha \fancy{R}u_1 + \beta \fancy{R} u_2 $$
+		\end{cases}
+	\]
+	\begin{center}
+		$\forall_{u, u_1, u_2} \in \fancy{D}$, $\alpha, \beta \in \fancy{R}$
+	\end{center}
+
+	
+\notka{
+	Można podać pierwszą albo drugą wersję. Wersja druga jest po prostu połączeniem dwóch równań w jedno, obie są równoważne.\\
+	Wejściowy przeskalowany sygnał da przeskalowane wyjście.\\
+	Sygnały można składać.
+}
+	
+\subsection{Przyczynowość}\label{sec:przyczynowosc}
+	
+	$ \fancy{R} \in \fancy{P} \Leftrightarrow \fancy{R}u_1(n) = \fancy{R}u_2(n) $\\
+	$ \forall_{n \le k} $, $ \forall u_1(n), u_2(n) \in \fancy{D} $:\\
+	\indent\indent\indent $ u_1(n) = u_2(n) $ dla $ n \le k $\\
+	\indent\indent\indent $ u_1(n) \ne u_2(n) $ dla $ n > k $\\\\
+\notka{
+	Dopóki $u_1$ i $u_2$ są takie same, wyjście będzie takie samo. $u_1$ oraz $u_2$ są takie same do momentu $k$. Później niż w momencie $k$ sygnały wejściowe ($u_1$, $u_2$) się różnią, więc i sygnały wyjściowe ($y_1$, $y_2$) też się różnią.
+}
+	
+\subsection{Stabilność}\label{sec:stabilnosc}
+\indent\textbf{Definicja:}\\
+$ \fancy{R} \in \fancy{S} \Leftrightarrow $\\
+$ \forall_{u,n} \big(|u(n)|\le M < \infty \Rightarrow |y(n)| < \infty \big) $\\
+
+\textbf{Warunek:}\\
+$ \fancy{R} \in \fancy{L}, \fancy{N}, \fancy{P} \Rightarrow $\\
+$ \fancy{R} \in \fancy{S} \Leftrightarrow l_1 \triangleq \sum\limits_{k=0}^{\infty}|h(k)|< \infty $\\
+
+\textbf{Dowód na stabilność splotu:}\label{eq:stabilnoscsplotu}\\
+$ |y(n)|=|h*u| \le \sum\limits_{k=0}^{\infty}|h(k)||u(n-k)|\le M l_1=M $\\
+
+\newpage
+\section{Zadania praktyczne}
+\subsection{Splot z interpretacją graficzną}\label{sec:splot}
+Obliczyć próbki odpowiedzi układu LNP o skończonej odpowiedzi impulsowej w postaci \{2, 1, 1, -2\} na wejście w postaci sekwencji \{1, 1, -1\}.
+
+\textbf{Dane:}
+
+$u(n) = \{1, 1, -1\}$
+
+$h(n) = \{2, 1, 1, -2\}$
+\\
+
+\begin{tabular}{cc}
+	\makecell{
+		\splot[xlabel=k, ylabel=u]{ u(n) -- wejście }{ (0,1) (1,1) (2,-1) }
+	}
+	&
+	\makecell{
+		\splot{ h(n) -- odpowiedź impulsowa }{ (0,2) (1,1) (2,1) (3,-2) }
+	}
+\end{tabular}
+
+% first output row
+\begin{tabular}{cc}
+	\makecell{
+		\splot{ n=0, h(-k) }{ (-3,-2) (-2,1) (-1,1) (0,2) }
+	}
+	&
+	\makecell{
+		\splot{ n=1, h(1-k) }{ (-2,-2) (-1,1) (0,1) (1,2) }
+	}
+\end{tabular}
+
+% second output row
+\begin{tabular}{cc}
+	\makecell{
+		\splot{ n=2, h(2-k) }{ (-1,-2) (0,1) (1,1) (2,2) }
+	}
+	&
+	\makecell{
+		\splot{ n=3, h(3-k) }{ (0,-2) (1,1) (2,1) (3,2) }
+	}
+\end{tabular}
+
+% third output row
+\begin{tabular}{cc}
+	\makecell{
+		\splot{ n=4, h(4-k) }{ (1,-2) (2,1) (3,1) (4,2) }
+	}
+	&
+	\makecell{
+		\splot{ n=5, h(5-k) }{ (2,-2) (3,1) (4,1) (5,2) }
+	}
+\end{tabular}
+
+% fourth output row
+\begin{tabular}{cc}
+	\makecell{
+		\splot{ n=6, h(6-k) }{ (3,-2) (4,1) (5,1) (6,2) }
+	}
+	&
+	\makecell{
+		\splot{ n=7, h(7-k) }{ (4,-2) (5,1) (6,1) (7,2) }
+	}
+\end{tabular}
+
+\textbf{Podsumowując obliczenia:}
+\begin{align*}
+y(0) &= u(0) \cdot h(0) \\	
+	&= 1 \cdot 2=2 \\
+y(1) &= u(0) \cdot h(0) + u(1) \cdot h(1) \\	
+	&= 1 \cdot 1 + 1 \cdot 2=1 + 2 = 3\\
+y(2) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) \\	
+	&= 1\cdot1 
+	+ 1\cdot1 
+	+ (-1)\cdot2 
+	= 1 +1 -2 = 0 \\
+y(3) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) + u(3) \cdot h(3) \\	
+	&= 1\cdot(-2)
+	+ 1\cdot1
+	+ (-1)\cdot1
+	+ 0\cdot2
+	= -2 +1 -1 +0 = -2 \\
+y(4) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) + u(3) \cdot h(3) + u(4) \cdot h(4)\\
+	&=
+	  1		\cdot 0
+	+ 1		\cdot (-2)
+	+ (-1)	\cdot 1
+	+ 0		\cdot 1
+	+ 0		\cdot 2
+	= 0 -2 -1 +0 +0 +0 = -3\\
+y(5) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) + u(3) \cdot h(3) + u(4) \cdot h(4) + u(5) \cdot h(5)\\
+	&=
+	1		\cdot 0
+	+ 1		\cdot 0
+	+ (-1)	\cdot (-2)
+	+ 0		\cdot 1
+	+ 0		\cdot 1
+	+ 0		\cdot 2
+	= 0 +0 +2 +0 +0 +0 = 2\\
+y(6) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) + u(3) \cdot h(3) +
+	\\ &+ u(4) \cdot h(4) + u(5) \cdot h(5) + u(6) \cdot h(6)\\
+	&=
+	1		\cdot 0
+	+ 1		\cdot 0
+	+ (-1)	\cdot 0
+	+ 0		\cdot (-2)
+	+ 0		\cdot 1
+	+ 0		\cdot 1
+	+ 0		\cdot 2 = \\
+	&= 0 +0 +0 +0 +0 +0 +0 = 0\\
+y(7) &= u(0) \cdot h(0) + u(1) \cdot h(1) + u(2) \cdot h(2) + u(3) \cdot h(3) +
+	\\ &+ u(4) \cdot h(4) + u(5) \cdot h(5) + u(6) \cdot h(6) + u(7) \cdot h(7)\\
+	&=
+	1		\cdot 0
+	+ 1		\cdot 0
+	+ (-1)	\cdot 0
+	+ 0		\cdot 0
+	+ 0		\cdot (-2)
+	+ 0		\cdot 1
+	+ 0		\cdot 1
+	+ 0		\cdot 2 = \\
+	&= 0 +0 +0 +0 +0 +0 +0 +0 = 0
+\end{align*}
+\notka{Wyniki można po prostu dać pod odpowiednimi wykresami, ale dałem pod spodem, żeby lepiej się sformatował dokument.}\\
+
+\begin{tabular}{c c}
+	\makecell[b]{
+		\textbf{Wyniki:}\\
+		y(0) = 2 \\
+		y(1) = 3 \\
+		y(2) = 0 \\
+		y(3) = -2 \\
+		y(4) = -3 \\
+		y(5) = 2 \\
+		y(6) = 0 \\
+		y(7) = 0 \\\\\\\\\\
+		$ $
+	}
+	&
+	\makecell[b]{
+		\splot[xlabel=n, ylabel=y]{ Wyniki w reprezentacji graficznej: }{
+			(0,2) (1,3) (2,0) (3,-2) (4,-3) (5,2) (6,0) (7,0)
+		}
+	}
+\end{tabular}
+
+\subsection{Splot (odpowiedź układu LN)}\label{sec:splotln}
+
+W razie czego jakby mi się już nie chciało tego robić:\\
+
+Zadanie liczymy jak zwykły splot, ale bierzemy wszystkie próbki, jeżeli mamy dane. h(k) odwracamy jak zwykle i liczymy dla wszystkich próbek, jeżeli coś jest.
+
+Innymi słowy zmienia się przedział, z którego bierzemy próbki:\\
+$y(n)=\sum\limits_{-\infty}^{\infty} u(k)h(n-k) = \sum\limits_{-\infty}^{\infty} u(n-k)h(k)=u(n)*h(n)$\\
+Czyli z przedziału $ <-\infty; \infty> $.
+
+\subsection{Równanie układu (zadanie z macierzą)}\label{sec:macierz}
+\def \vA {\macierz{\m0 & \m1\\ -1 & -1 }}
+
+\textbf{Treść:} Wyznacz odpowiedź układu cyfrowego na 3 jedynki zakładając model stanowy SISO o wartościach początkowych $x(0)=\begin{bmatrix}1\\ 0\end{bmatrix}$ zadany macierzami $A = \vA$, $B = \begin{bmatrix}0 \\ 1 \end{bmatrix}$, $C = \begin{bmatrix}1 & 1 \end{bmatrix}$, D nie ma.\\
+
+Jako że D nie ma, będziemy korzystać ze zmodyfikowanego \link{eq:rownanie_stanu_uproszczone}{wzoru uproszczonego:}
+
+$$
+	\begin{cases}
+		\rownaniezmacierzax{$x(n+1)$}{$A$}{$x(n)$}{$B$}{$u(n)$}\\
+		\rownaniezmacierzaysimple{$y(n)$}{$C$}{$x(n)$}
+	\end{cases}
+$$
+\\
+
+\textbf{Dane:}\\
+
+$\bgcolor{Turquoise}{$u(n)$}=\{1, 1, 1\}$ -- dla kolejnych u są same zera\\
+$\bgcolor{YellowGreen}{$x(0)$}=\begin{bmatrix}1\\ 0\end{bmatrix}$\\
+$\bgcolor{Yellow}{$A$} = \vA$\\
+$\bgcolor{Dandelion}{$B$} = \begin{bmatrix}0 \\ 1 \end{bmatrix}$\\
+$\bgcolor{Red}{$C$} = \begin{bmatrix}1 & 1 \end{bmatrix}$\\
+
+$n=0$\\
+$$
+\begin{cases}
+	\rownaniezmacierzax{$x(1)$}{$A$}{$x(0)$}{$B$}{$u(n)$}\\
+	\rownaniezmacierzaysimple{$y(0)$}{$C$}{$x(0)$}
+\end{cases}
+$$
+$$
+\begin{cases}
+	\rownaniezmacierzax{$x(1)$}
+	{$\vA$}							% A, nie zmienia się
+	{$\macierz{1 \\ 0}$}			% x(n)
+	{$\macierz{0 \\ 1}$}			% B
+	{1}								% u(n)
+	=\macierz{\m0 \\ -1} + \macierz{0 \\ 1}
+	=\bgcolor{YellowGreen}{$\macierz{0 \\ 0}$}\\
+	
+	\rownaniezmacierzaysimple{$y(0)$}
+	{$\macierz{1 & 1}$}				% C, nie zmienia się
+	{$\macierz{1 \\ 0}$}			% x(n)
+	= \bgcolor{Orchid}{$\macierz{1}$}
+\end{cases}
+$$\\
+
+$n=1$\\
+$$
+\begin{cases}
+	\rownaniezmacierzax{$x(2)$}
+	{$\vA$}							% A, nie zmienia się
+	{$\macierz{0 \\ 0}$}			% x(n)
+	{$\macierz{0 \\ 1}$}			% B
+	{1}								% u(n)
+	=\macierz{0 \\ 0} + \macierz{0 \\ 1}
+	=\bgcolor{YellowGreen}{$\macierz{0 \\ 1}$}\\
+	
+	\rownaniezmacierzaysimple{$y(1)$}
+	{$\macierz{1 & 1}$}				% C, nie zmienia się
+	{$\macierz{0 \\ 0}$}			% x(n)
+	= \bgcolor{Orchid}{$\macierz{0}$}
+\end{cases}
+$$
+
+$n=2$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(3)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{0 \\ 1}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{1}								% u(n)
+=\macierz{\m1 \\ -1} + \macierz{0 \\ 1}
+=\bgcolor{YellowGreen}{$\macierz{1 \\ 0}$}\\
+
+\rownaniezmacierzaysimple{$y(2)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{0 \\ 1}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{1}$}
+\end{cases}
+$$
+
+$n=3$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(4)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{1 \\ 0}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{0}								% u(n)
+=\macierz{-1 \\ \m0} + \macierz{0 \\ 0}
+=\bgcolor{YellowGreen}{$\macierz{\m0 \\ -1}$}\\
+
+\rownaniezmacierzaysimple{$y(3)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{1 \\ 0}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{1}$}
+\end{cases}
+$$
+
+$n=4$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(5)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{\m0 \\ -1}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{0}								% u(n)
+=\macierz{-1 \\ \m1} + \macierz{0 \\ 0}
+=\bgcolor{YellowGreen}{$\macierz{-1 \\ \m1}$}\\
+
+\rownaniezmacierzaysimple{$y(4)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{\m0 \\ -1}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{-1}$}
+\end{cases}
+$$
+
+$n=5$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(6)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{-1 \\ 1}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{0}								% u(n)
+=\macierz{1 \\ 0} + \macierz{0 \\ 0}
+=\bgcolor{YellowGreen}{$\macierz{1 \\ 0}$}\\
+
+\rownaniezmacierzaysimple{$y(5)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{-1 \\ 1}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{0}$}
+\end{cases}
+$$
+
+$n=6$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(7)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{1 \\ 0}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{0}								% u(n)
+=\macierz{\m0 \\ -1} + \macierz{0 \\ 0}
+=\bgcolor{YellowGreen}{$\macierz{\m0 \\ -1}$}\\
+
+\rownaniezmacierzaysimple{$y(6)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{1 \\ 0}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{1}$}
+\end{cases}
+$$
+
+$n=7$\\
+$$
+\begin{cases}
+\rownaniezmacierzax{$x(8)$}
+{$\vA$}							% A, nie zmienia się
+{$\macierz{\m0 \\ -1}$}			% x(n)
+{$\macierz{0 \\ 1}$}			% B
+{0}								% u(n)
+=\macierz{-1 \\ 1} + \macierz{0 \\ 0}
+=\bgcolor{YellowGreen}{$\macierz{-1 \\ 1}$}\\
+
+\rownaniezmacierzaysimple{$y(7)$}
+{$\macierz{1 & 1}$}				% C, nie zmienia się
+{$\macierz{\m0 \\ -1}$}			% x(n)
+= \bgcolor{Orchid}{$\macierz{-1}$}
+\end{cases}
+$$
+
+
+\section{Treści zadań}
+\subsection{2018/19}
+\subsubsection{Termin 1}
+
+\myparagraph{Podaj definicję niezmienniczości (grupa A)}
+Patrz: \hyperref[sec:niezmienniczosc]{\textit{\underline{niezmienniczość}}}
+
+\myparagraph{Podaj definicję stabilności (grupa A)}
+Patrz: \hyperref[sec:stabilnosc]{\textit{\underline{stabilność}}}
+
+\myparagraph{Podaj warunek stabilności (grupa B)}
+Patrz: \hyperref[sec:przyczynowosc]{\textit{\underline{stabilność}}}
+
+\myparagraph{Podaj definicję przyczynowości (grupa B)}
+Patrz: \hyperref[sec:przyczynowosc]{\textit{\underline{przyczynowość}}}
+
+\paragraph{Obliczyć próbki odpowiedzi układu LNP o skończonej odpowiedzi impulsowej}
+\begin{itemize}[noitemsep,topsep=0pt]
+		\item[a)] $h=\{2, 1, 1, -2\}$ na wejście w postaci sekwencji $u=\{1, 1, -1\}$ (grupa A)
+		\item[b)] $h=\{-2, 1, 1, 2\}$ na wejście w postaci sekwencji $u=\{1, -1, 1\}$ (grupa B)
+\end{itemize}
+$ $\\
+Patrz: \hyperref[sec:splot]{\textit{\underline{splot}}}
+
+\subsubsection{Termin 2}
+
+\myparagraph{Podaj definicję i warunek stabilności}
+Patrz: \hyperref[sec:przyczynowosc]{\textit{\underline{stabilność}}}
+
+\paragraph{Wymień i opisz modele matematyczne układów cyfrowych}
+\begin{itemize}[noitemsep,topsep=0pt]
+	\item[--] Splot -- patrz: \link{eq:splot}{wzór na splot}
+	\item[--] Równanie stanu -- patrz: \link{eq:rownanie_stanu}{wzór na równanie stanu}
+	\item[--] Równanie różnicowe -- patrz: \link{eq:rownanie_roznicowe}{wzór na równanie różnicowe}
+\end{itemize}
+
+\myparagraph{Wyznacz odpowiedź układu cyfrowego na 3 jedynki zakładając model stanowy SISO...}
+Wyznacz odpowiedź układu cyfrowego na 3 jedynki zakładając model stanowy SISO o wartościach początkowych $\macierz{1 \\ 0}$ zadany macierzami $A$ = $\macierz{\m0\ \m1\\ -1 -1}$, $B = \macierz{0 \\ 1}$, $C = \macierz{1 & 1}$, $D$ nie ma.\\
+
+\noindent Patrz: \link{sec:macierz}{zadanie z macierzą}
+
+\subsubsection{Termin 3}
+\myparagraph{Rozwiązać i napisać wzór końcowy SISO...}
+Rozwiązać i napisać wzór końcowy SISO. Rozpisać x(n) i y(n) dla (chyba) 7 kolejnych wartości. Podane $A$, $B$, $C$, i jakieś udziwnione $u(n)$, założyć że $x(0) = 0$.\\
+
+\noindent Patrz: \link{sec:macierz}{zadanie z macierzą}
+
+\myparagraph{Splot układu LN (układ NIE był przyczynowy)}
+Patrz: \hyperref[sec:splotln]{\textit{\underline{splot LN}}}
+
+\subsubsection{Termin 4}
+\myparagraph{Podaj definicję przyczynowości}
+
+\myparagraph{Podaj definicję i warunek stabilności}
+
+\myparagraph{Splot układu LNP}
+u = $\{1, 1, 1\}$\\
+h = $\{1, -1, 1\}$\\
+
+\noindent Patrz: \link{sec:splot}{zadanie ze splotem}
+
+\myparagraph{Zadanie z macierzą}
+A = $\macierz{0 & 1\\ 1 & \frac{1}{2}}$\\
+B = $\macierz{0 \\ 1}$\\
+C = $\macierz{0 & 1}$\\
+u = $\{1, 1, 1\}$\\
+$x(0)$ = $\macierz{0 \\ 0}$\\
+
+\noindent Patrz: \link{sec:macierz}{zadanie z macierzą}\\
+
+
+\myparagraph{Uzupełnij tabelę}\\
+\begin{tabular}{|c|c|c|}
+\hline
+    \textbf{--} & \textbf{ST} & \textbf{REK} \\
+ \hline
+    \textbf{S3} & & \\
+\hline
+    \textbf{S4} & & \\
+\hline
+\end{tabular}\\\\
+ST -- czy system jest stabilny\\
+REK -- czy system jest rekursywny\\
+$S3$ -- system z zadania 3\\
+$S4$ -- system z zadania 4\\
+
+\noindent
+\textbf{Rozwiązanie:}\\
+\begin{tabular}{|c|c|c|}
+\hline
+    \textbf{--} & \textbf{ST} & \textbf{REK} \\
+ \hline
+    \textbf{S3} & T & N \\
+\hline
+    \textbf{S4} & N & T \\
+\hline
+\end{tabular}\\
+\\
+S3 jest stabilny, patrz: \link{eq:stabilnoscsplotu}{dowód na stabilność splotu}\\
+S4 jest niestabilny (bo rozciąga się w czasie w nieskończoność)
+\end{document} 
+ 

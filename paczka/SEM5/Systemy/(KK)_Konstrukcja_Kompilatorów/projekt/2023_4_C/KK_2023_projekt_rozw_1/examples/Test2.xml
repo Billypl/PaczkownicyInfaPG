@@ -1,0 +1,7 @@
+<!-- Program testowy 2 -->
+<?xml version="1.0" encoding="utf-8"?>
+<Root x="1" y="1" > <!-- para znacznik�w -->
+	<Elem1 a="2">A</Elem1>
+		<Elem3 b = "3" /> <!-- pusty -->
+	<Elem2>B<Elem5/>CDD halo</Elem4> <!-- b��d!! -->
+</Root>

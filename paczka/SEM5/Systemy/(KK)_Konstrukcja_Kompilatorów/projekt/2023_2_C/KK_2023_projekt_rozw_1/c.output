@@ -1,0 +1,2181 @@
+Terminals which are not used
+
+   CHARACTER_CONST
+
+
+State 111 conflicts: 3 shift/reduce
+State 136 conflicts: 3 shift/reduce
+State 137 conflicts: 3 shift/reduce
+State 138 conflicts: 3 shift/reduce
+State 139 conflicts: 3 shift/reduce
+State 145 conflicts: 1 shift/reduce
+State 155 conflicts: 7 shift/reduce
+
+
+Grammar
+
+    0 $accept: Grammar $end
+
+    1 Grammar: /* empty */
+    2        | error
+    3        | SECTION_LIST
+
+    4 SECTION_LIST: SECTION
+    5             | SECTION_LIST SECTION
+
+    6 SECTION: S_DECLARATION
+    7        | S_FUNCTION
+
+    8 S_DECLARATION: DATA_TYPE VAR_LIST ';'
+
+    9 DATA_TYPE: KW_CHAR
+   10          | KW_UNSIGNED KW_CHAR
+   11          | KW_SHORT
+   12          | KW_UNSIGNED KW_SHORT
+   13          | KW_INT
+   14          | KW_UNSIGNED KW_INT
+   15          | KW_UNSIGNED
+   16          | KW_LONG
+   17          | KW_UNSIGNED KW_LONG
+   18          | KW_FLOAT
+   19          | KW_DOUBLE
+   20          | STRUCTURE
+
+   21 STRUCTURE: KW_STRUCT OPT_TAG '{' FIELD_LIST '}'
+
+   22 OPT_TAG: IDENT
+   23        | /* empty */
+
+   24 FIELD_LIST: FIELD
+   25           | FIELD_LIST FIELD
+
+   26 FIELD: S_DECLARATION
+
+   27 VAR_LIST: VAR
+   28         | VAR_LIST ',' VAR
+
+   29 VAR: IDENT SUBSCRIPTS
+   30    | IDENT '=' EXPR
+   31    | IDENT '=' STRING_CONST
+
+   32 SUBSCRIPTS: SUBSCRIPTS SUBSCRIPT
+   33           | /* empty */
+
+   34 SUBSCRIPT: '[' EXPR ']'
+
+   35 S_FUNCTION: DATA_TYPE FUN_HEAD BLOCK
+   36           | KW_VOID FUN_HEAD BLOCK
+
+   37 FUN_HEAD: IDENT '(' FORM_PARAMS ')'
+
+   38 FORM_PARAMS: KW_VOID
+   39            | FORM_PARAM_LIST
+
+   40 FORM_PARAM_LIST: FORM_PARAM
+   41                | FORM_PARAM_LIST ',' FORM_PARAM
+
+   42 FORM_PARAM: DATA_TYPE IDENT
+
+   43 BLOCK: INSTRUCTION
+   44      | '{' DECL_LIST INSTR_LIST '}'
+
+   45 DECL_LIST: /* empty */
+   46          | DECL_LIST S_DECLARATION
+
+   47 INSTR_LIST: INSTR_LIST INSTRUCTION
+   48           | /* empty */
+
+   49 INSTRUCTION: ';'
+   50            | FUN_CALL
+   51            | FOR_INSTR
+   52            | ASSIGNMENT ';'
+   53            | INCR ';'
+   54            | IF_INSTR
+   55            | WHILE_INSTR
+   56            | DO_WHILE
+
+   57 FUN_CALL: IDENT '(' ACT_PARAMS ')' ';'
+
+   58 ACT_PARAMS: ACT_PARAM_LIST
+   59           | /* empty */
+
+   60 ACT_PARAM_LIST: ACT_PARAM
+   61               | ACT_PARAM_LIST ',' ACT_PARAM
+
+   62 ACT_PARAM: EXPR
+   63          | STRING_CONST
+
+   64 INCR: IDENT QUALIF INC
+
+   65 QUALIF: SUBSCRIPTS
+   66       | '.' IDENT QUALIF
+
+   67 ASSIGNMENT: IDENT QUALIF '=' EXPR
+
+   68 NUMBER: INTEGER_CONST
+   69       | FLOAT_CONST
+
+   70 EXPR: NUMBER
+   71     | IDENT QUALIF
+   72     | EXPR '+' EXPR
+   73     | EXPR '-' EXPR
+   74     | EXPR '*' EXPR
+   75     | EXPR '/' EXPR
+   76     | '-' EXPR
+   77     | '(' EXPR ')'
+   78     | COND_EXPR
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR ';' INCR ')' BLOCK
+
+   80 LOG_EXPR: EXPR LE EXPR
+   81         | EXPR '<' EXPR
+   82         | EXPR '>' EXPR
+
+   83 IF_INSTR: KW_IF '(' LOG_EXPR ')' BLOCK ELSE_PART
+
+   84 ELSE_PART: KW_ELSE BLOCK
+   85          | /* empty */
+
+   86 WHILE_INSTR: KW_WHILE '(' LOG_EXPR ')' BLOCK
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE '(' LOG_EXPR ')' ';'
+
+   88 COND_EXPR: LOG_EXPR '?' EXPR ':' EXPR
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 37 57 77 79 83 86 87
+')' (41) 37 57 77 79 83 86 87
+'*' (42) 74
+'+' (43) 72
+',' (44) 28 41 61
+'-' (45) 73 76
+'.' (46) 66
+'/' (47) 75
+':' (58) 88
+';' (59) 8 49 52 53 57 79 87
+'<' (60) 81
+'=' (61) 30 31 67
+'>' (62) 82
+'?' (63) 88
+'[' (91) 34
+']' (93) 34
+'{' (123) 21 44
+'}' (125) 21 44
+error (256) 2
+KW_CHAR (258) 9 10
+KW_UNSIGNED (259) 10 12 14 15 17
+KW_SHORT (260) 11 12
+KW_INT (261) 13 14
+KW_LONG (262) 16 17
+KW_FLOAT (263) 18
+KW_VOID (264) 36 38
+KW_FOR (265) 79
+KW_DOUBLE (266) 19
+KW_IF (267) 83
+KW_ELSE (268) 84
+KW_WHILE (269) 86 87
+KW_DO (270) 87
+KW_STRUCT (271) 21
+INTEGER_CONST (272) 68
+FLOAT_CONST (273) 69
+STRING_CONST (274) 31 63
+CHARACTER_CONST (275)
+INC (276) 64
+LE (277) 80
+IDENT (278) 22 29 30 31 37 42 57 64 66 67 71
+NEG (279)
+COND (280)
+
+
+Nonterminals, with rules where they appear
+
+$accept (44)
+    on left: 0
+Grammar (45)
+    on left: 1 2 3, on right: 0
+SECTION_LIST (46)
+    on left: 4 5, on right: 3 5
+SECTION (47)
+    on left: 6 7, on right: 4 5
+S_DECLARATION (48)
+    on left: 8, on right: 6 26 46
+DATA_TYPE (49)
+    on left: 9 10 11 12 13 14 15 16 17 18 19 20, on right: 8 35 42
+STRUCTURE (50)
+    on left: 21, on right: 20
+OPT_TAG (51)
+    on left: 22 23, on right: 21
+FIELD_LIST (52)
+    on left: 24 25, on right: 21 25
+FIELD (53)
+    on left: 26, on right: 24 25
+VAR_LIST (54)
+    on left: 27 28, on right: 8 28
+VAR (55)
+    on left: 29 30 31, on right: 27 28
+SUBSCRIPTS (56)
+    on left: 32 33, on right: 29 32 65
+SUBSCRIPT (57)
+    on left: 34, on right: 32
+S_FUNCTION (58)
+    on left: 35 36, on right: 7
+FUN_HEAD (59)
+    on left: 37, on right: 35 36
+FORM_PARAMS (60)
+    on left: 38 39, on right: 37
+FORM_PARAM_LIST (61)
+    on left: 40 41, on right: 39 41
+FORM_PARAM (62)
+    on left: 42, on right: 40 41
+BLOCK (63)
+    on left: 43 44, on right: 35 36 79 83 84 86 87
+DECL_LIST (64)
+    on left: 45 46, on right: 44 46
+INSTR_LIST (65)
+    on left: 47 48, on right: 44 47
+INSTRUCTION (66)
+    on left: 49 50 51 52 53 54 55 56, on right: 43 47
+FUN_CALL (67)
+    on left: 57, on right: 50
+ACT_PARAMS (68)
+    on left: 58 59, on right: 57
+ACT_PARAM_LIST (69)
+    on left: 60 61, on right: 58 61
+ACT_PARAM (70)
+    on left: 62 63, on right: 60 61
+INCR (71)
+    on left: 64, on right: 53 79
+QUALIF (72)
+    on left: 65 66, on right: 64 66 67 71
+ASSIGNMENT (73)
+    on left: 67, on right: 52 79
+NUMBER (74)
+    on left: 68 69, on right: 70
+EXPR (75)
+    on left: 70 71 72 73 74 75 76 77 78, on right: 30 34 62 67 72 73
+    74 75 76 77 80 81 82 88
+FOR_INSTR (76)
+    on left: 79, on right: 51
+LOG_EXPR (77)
+    on left: 80 81 82, on right: 79 83 86 87 88
+IF_INSTR (78)
+    on left: 83, on right: 54
+ELSE_PART (79)
+    on left: 84 85, on right: 83
+WHILE_INSTR (80)
+    on left: 86, on right: 55
+DO_WHILE (81)
+    on left: 87, on right: 56
+COND_EXPR (82)
+    on left: 88, on right: 78
+
+
+state 0
+
+    0 $accept: . Grammar $end
+
+    error        shift, and go to state 1
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_VOID      shift, and go to state 8
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    $end  reduce using rule 1 (Grammar)
+
+    Grammar        go to state 11
+    SECTION_LIST   go to state 12
+    SECTION        go to state 13
+    S_DECLARATION  go to state 14
+    DATA_TYPE      go to state 15
+    STRUCTURE      go to state 16
+    S_FUNCTION     go to state 17
+
+
+state 1
+
+    2 Grammar: error .
+
+    $default  reduce using rule 2 (Grammar)
+
+
+state 2
+
+    9 DATA_TYPE: KW_CHAR .
+
+    $default  reduce using rule 9 (DATA_TYPE)
+
+
+state 3
+
+   10 DATA_TYPE: KW_UNSIGNED . KW_CHAR
+   12          | KW_UNSIGNED . KW_SHORT
+   14          | KW_UNSIGNED . KW_INT
+   15          | KW_UNSIGNED .
+   17          | KW_UNSIGNED . KW_LONG
+
+    KW_CHAR   shift, and go to state 18
+    KW_SHORT  shift, and go to state 19
+    KW_INT    shift, and go to state 20
+    KW_LONG   shift, and go to state 21
+
+    $default  reduce using rule 15 (DATA_TYPE)
+
+
+state 4
+
+   11 DATA_TYPE: KW_SHORT .
+
+    $default  reduce using rule 11 (DATA_TYPE)
+
+
+state 5
+
+   13 DATA_TYPE: KW_INT .
+
+    $default  reduce using rule 13 (DATA_TYPE)
+
+
+state 6
+
+   16 DATA_TYPE: KW_LONG .
+
+    $default  reduce using rule 16 (DATA_TYPE)
+
+
+state 7
+
+   18 DATA_TYPE: KW_FLOAT .
+
+    $default  reduce using rule 18 (DATA_TYPE)
+
+
+state 8
+
+   36 S_FUNCTION: KW_VOID . FUN_HEAD BLOCK
+
+    IDENT  shift, and go to state 22
+
+    FUN_HEAD  go to state 23
+
+
+state 9
+
+   19 DATA_TYPE: KW_DOUBLE .
+
+    $default  reduce using rule 19 (DATA_TYPE)
+
+
+state 10
+
+   21 STRUCTURE: KW_STRUCT . OPT_TAG '{' FIELD_LIST '}'
+
+    IDENT  shift, and go to state 24
+
+    $default  reduce using rule 23 (OPT_TAG)
+
+    OPT_TAG  go to state 25
+
+
+state 11
+
+    0 $accept: Grammar . $end
+
+    $end  shift, and go to state 26
+
+
+state 12
+
+    3 Grammar: SECTION_LIST .
+    5 SECTION_LIST: SECTION_LIST . SECTION
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_VOID      shift, and go to state 8
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    $default  reduce using rule 3 (Grammar)
+
+    SECTION        go to state 27
+    S_DECLARATION  go to state 14
+    DATA_TYPE      go to state 15
+    STRUCTURE      go to state 16
+    S_FUNCTION     go to state 17
+
+
+state 13
+
+    4 SECTION_LIST: SECTION .
+
+    $default  reduce using rule 4 (SECTION_LIST)
+
+
+state 14
+
+    6 SECTION: S_DECLARATION .
+
+    $default  reduce using rule 6 (SECTION)
+
+
+state 15
+
+    8 S_DECLARATION: DATA_TYPE . VAR_LIST ';'
+   35 S_FUNCTION: DATA_TYPE . FUN_HEAD BLOCK
+
+    IDENT  shift, and go to state 28
+
+    VAR_LIST  go to state 29
+    VAR       go to state 30
+    FUN_HEAD  go to state 31
+
+
+state 16
+
+   20 DATA_TYPE: STRUCTURE .
+
+    $default  reduce using rule 20 (DATA_TYPE)
+
+
+state 17
+
+    7 SECTION: S_FUNCTION .
+
+    $default  reduce using rule 7 (SECTION)
+
+
+state 18
+
+   10 DATA_TYPE: KW_UNSIGNED KW_CHAR .
+
+    $default  reduce using rule 10 (DATA_TYPE)
+
+
+state 19
+
+   12 DATA_TYPE: KW_UNSIGNED KW_SHORT .
+
+    $default  reduce using rule 12 (DATA_TYPE)
+
+
+state 20
+
+   14 DATA_TYPE: KW_UNSIGNED KW_INT .
+
+    $default  reduce using rule 14 (DATA_TYPE)
+
+
+state 21
+
+   17 DATA_TYPE: KW_UNSIGNED KW_LONG .
+
+    $default  reduce using rule 17 (DATA_TYPE)
+
+
+state 22
+
+   37 FUN_HEAD: IDENT . '(' FORM_PARAMS ')'
+
+    '('  shift, and go to state 32
+
+
+state 23
+
+   36 S_FUNCTION: KW_VOID FUN_HEAD . BLOCK
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 40
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 24
+
+   22 OPT_TAG: IDENT .
+
+    $default  reduce using rule 22 (OPT_TAG)
+
+
+state 25
+
+   21 STRUCTURE: KW_STRUCT OPT_TAG . '{' FIELD_LIST '}'
+
+    '{'  shift, and go to state 49
+
+
+state 26
+
+    0 $accept: Grammar $end .
+
+    $default  accept
+
+
+state 27
+
+    5 SECTION_LIST: SECTION_LIST SECTION .
+
+    $default  reduce using rule 5 (SECTION_LIST)
+
+
+state 28
+
+   29 VAR: IDENT . SUBSCRIPTS
+   30    | IDENT . '=' EXPR
+   31    | IDENT . '=' STRING_CONST
+   37 FUN_HEAD: IDENT . '(' FORM_PARAMS ')'
+
+    '='  shift, and go to state 50
+    '('  shift, and go to state 32
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 51
+
+
+state 29
+
+    8 S_DECLARATION: DATA_TYPE VAR_LIST . ';'
+   28 VAR_LIST: VAR_LIST . ',' VAR
+
+    ';'  shift, and go to state 52
+    ','  shift, and go to state 53
+
+
+state 30
+
+   27 VAR_LIST: VAR .
+
+    $default  reduce using rule 27 (VAR_LIST)
+
+
+state 31
+
+   35 S_FUNCTION: DATA_TYPE FUN_HEAD . BLOCK
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 54
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 32
+
+   37 FUN_HEAD: IDENT '(' . FORM_PARAMS ')'
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_VOID      shift, and go to state 55
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    DATA_TYPE        go to state 56
+    STRUCTURE        go to state 16
+    FORM_PARAMS      go to state 57
+    FORM_PARAM_LIST  go to state 58
+    FORM_PARAM       go to state 59
+
+
+state 33
+
+   79 FOR_INSTR: KW_FOR . '(' ASSIGNMENT ';' LOG_EXPR ';' INCR ')' BLOCK
+
+    '('  shift, and go to state 60
+
+
+state 34
+
+   83 IF_INSTR: KW_IF . '(' LOG_EXPR ')' BLOCK ELSE_PART
+
+    '('  shift, and go to state 61
+
+
+state 35
+
+   86 WHILE_INSTR: KW_WHILE . '(' LOG_EXPR ')' BLOCK
+
+    '('  shift, and go to state 62
+
+
+state 36
+
+   87 DO_WHILE: KW_DO . BLOCK KW_WHILE '(' LOG_EXPR ')' ';'
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 63
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 37
+
+   57 FUN_CALL: IDENT . '(' ACT_PARAMS ')' ';'
+   64 INCR: IDENT . QUALIF INC
+   67 ASSIGNMENT: IDENT . QUALIF '=' EXPR
+
+    '('  shift, and go to state 64
+    '.'  shift, and go to state 65
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 66
+    QUALIF      go to state 67
+
+
+state 38
+
+   49 INSTRUCTION: ';' .
+
+    $default  reduce using rule 49 (INSTRUCTION)
+
+
+state 39
+
+   44 BLOCK: '{' . DECL_LIST INSTR_LIST '}'
+
+    $default  reduce using rule 45 (DECL_LIST)
+
+    DECL_LIST  go to state 68
+
+
+state 40
+
+   36 S_FUNCTION: KW_VOID FUN_HEAD BLOCK .
+
+    $default  reduce using rule 36 (S_FUNCTION)
+
+
+state 41
+
+   43 BLOCK: INSTRUCTION .
+
+    $default  reduce using rule 43 (BLOCK)
+
+
+state 42
+
+   50 INSTRUCTION: FUN_CALL .
+
+    $default  reduce using rule 50 (INSTRUCTION)
+
+
+state 43
+
+   53 INSTRUCTION: INCR . ';'
+
+    ';'  shift, and go to state 69
+
+
+state 44
+
+   52 INSTRUCTION: ASSIGNMENT . ';'
+
+    ';'  shift, and go to state 70
+
+
+state 45
+
+   51 INSTRUCTION: FOR_INSTR .
+
+    $default  reduce using rule 51 (INSTRUCTION)
+
+
+state 46
+
+   54 INSTRUCTION: IF_INSTR .
+
+    $default  reduce using rule 54 (INSTRUCTION)
+
+
+state 47
+
+   55 INSTRUCTION: WHILE_INSTR .
+
+    $default  reduce using rule 55 (INSTRUCTION)
+
+
+state 48
+
+   56 INSTRUCTION: DO_WHILE .
+
+    $default  reduce using rule 56 (INSTRUCTION)
+
+
+state 49
+
+   21 STRUCTURE: KW_STRUCT OPT_TAG '{' . FIELD_LIST '}'
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    S_DECLARATION  go to state 71
+    DATA_TYPE      go to state 72
+    STRUCTURE      go to state 16
+    FIELD_LIST     go to state 73
+    FIELD          go to state 74
+
+
+state 50
+
+   30 VAR: IDENT '=' . EXPR
+   31    | IDENT '=' . STRING_CONST
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    STRING_CONST   shift, and go to state 77
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 82
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 51
+
+   29 VAR: IDENT SUBSCRIPTS .
+   32 SUBSCRIPTS: SUBSCRIPTS . SUBSCRIPT
+
+    '['  shift, and go to state 85
+
+    $default  reduce using rule 29 (VAR)
+
+    SUBSCRIPT  go to state 86
+
+
+state 52
+
+    8 S_DECLARATION: DATA_TYPE VAR_LIST ';' .
+
+    $default  reduce using rule 8 (S_DECLARATION)
+
+
+state 53
+
+   28 VAR_LIST: VAR_LIST ',' . VAR
+
+    IDENT  shift, and go to state 87
+
+    VAR  go to state 88
+
+
+state 54
+
+   35 S_FUNCTION: DATA_TYPE FUN_HEAD BLOCK .
+
+    $default  reduce using rule 35 (S_FUNCTION)
+
+
+state 55
+
+   38 FORM_PARAMS: KW_VOID .
+
+    $default  reduce using rule 38 (FORM_PARAMS)
+
+
+state 56
+
+   42 FORM_PARAM: DATA_TYPE . IDENT
+
+    IDENT  shift, and go to state 89
+
+
+state 57
+
+   37 FUN_HEAD: IDENT '(' FORM_PARAMS . ')'
+
+    ')'  shift, and go to state 90
+
+
+state 58
+
+   39 FORM_PARAMS: FORM_PARAM_LIST .
+   41 FORM_PARAM_LIST: FORM_PARAM_LIST . ',' FORM_PARAM
+
+    ','  shift, and go to state 91
+
+    $default  reduce using rule 39 (FORM_PARAMS)
+
+
+state 59
+
+   40 FORM_PARAM_LIST: FORM_PARAM .
+
+    $default  reduce using rule 40 (FORM_PARAM_LIST)
+
+
+state 60
+
+   79 FOR_INSTR: KW_FOR '(' . ASSIGNMENT ';' LOG_EXPR ';' INCR ')' BLOCK
+
+    IDENT  shift, and go to state 92
+
+    ASSIGNMENT  go to state 93
+
+
+state 61
+
+   83 IF_INSTR: KW_IF '(' . LOG_EXPR ')' BLOCK ELSE_PART
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 94
+    LOG_EXPR   go to state 95
+    COND_EXPR  go to state 84
+
+
+state 62
+
+   86 WHILE_INSTR: KW_WHILE '(' . LOG_EXPR ')' BLOCK
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 94
+    LOG_EXPR   go to state 96
+    COND_EXPR  go to state 84
+
+
+state 63
+
+   87 DO_WHILE: KW_DO BLOCK . KW_WHILE '(' LOG_EXPR ')' ';'
+
+    KW_WHILE  shift, and go to state 97
+
+
+state 64
+
+   57 FUN_CALL: IDENT '(' . ACT_PARAMS ')' ';'
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    STRING_CONST   shift, and go to state 98
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    $default  reduce using rule 59 (ACT_PARAMS)
+
+    ACT_PARAMS      go to state 99
+    ACT_PARAM_LIST  go to state 100
+    ACT_PARAM       go to state 101
+    NUMBER          go to state 81
+    EXPR            go to state 102
+    LOG_EXPR        go to state 83
+    COND_EXPR       go to state 84
+
+
+state 65
+
+   66 QUALIF: '.' . IDENT QUALIF
+
+    IDENT  shift, and go to state 103
+
+
+state 66
+
+   32 SUBSCRIPTS: SUBSCRIPTS . SUBSCRIPT
+   65 QUALIF: SUBSCRIPTS .
+
+    '['  shift, and go to state 85
+
+    $default  reduce using rule 65 (QUALIF)
+
+    SUBSCRIPT  go to state 86
+
+
+state 67
+
+   64 INCR: IDENT QUALIF . INC
+   67 ASSIGNMENT: IDENT QUALIF . '=' EXPR
+
+    INC  shift, and go to state 104
+    '='  shift, and go to state 105
+
+
+state 68
+
+   44 BLOCK: '{' DECL_LIST . INSTR_LIST '}'
+   46 DECL_LIST: DECL_LIST . S_DECLARATION
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    $default  reduce using rule 48 (INSTR_LIST)
+
+    S_DECLARATION  go to state 106
+    DATA_TYPE      go to state 72
+    STRUCTURE      go to state 16
+    INSTR_LIST     go to state 107
+
+
+state 69
+
+   53 INSTRUCTION: INCR ';' .
+
+    $default  reduce using rule 53 (INSTRUCTION)
+
+
+state 70
+
+   52 INSTRUCTION: ASSIGNMENT ';' .
+
+    $default  reduce using rule 52 (INSTRUCTION)
+
+
+state 71
+
+   26 FIELD: S_DECLARATION .
+
+    $default  reduce using rule 26 (FIELD)
+
+
+state 72
+
+    8 S_DECLARATION: DATA_TYPE . VAR_LIST ';'
+
+    IDENT  shift, and go to state 87
+
+    VAR_LIST  go to state 29
+    VAR       go to state 30
+
+
+state 73
+
+   21 STRUCTURE: KW_STRUCT OPT_TAG '{' FIELD_LIST . '}'
+   25 FIELD_LIST: FIELD_LIST . FIELD
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+    '}'          shift, and go to state 108
+
+    S_DECLARATION  go to state 71
+    DATA_TYPE      go to state 72
+    STRUCTURE      go to state 16
+    FIELD          go to state 109
+
+
+state 74
+
+   24 FIELD_LIST: FIELD .
+
+    $default  reduce using rule 24 (FIELD_LIST)
+
+
+state 75
+
+   68 NUMBER: INTEGER_CONST .
+
+    $default  reduce using rule 68 (NUMBER)
+
+
+state 76
+
+   69 NUMBER: FLOAT_CONST .
+
+    $default  reduce using rule 69 (NUMBER)
+
+
+state 77
+
+   31 VAR: IDENT '=' STRING_CONST .
+
+    $default  reduce using rule 31 (VAR)
+
+
+state 78
+
+   71 EXPR: IDENT . QUALIF
+
+    '.'  shift, and go to state 65
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 66
+    QUALIF      go to state 110
+
+
+state 79
+
+   76 EXPR: '-' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 111
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 80
+
+   77 EXPR: '(' . EXPR ')'
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 112
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 81
+
+   70 EXPR: NUMBER .
+
+    $default  reduce using rule 70 (EXPR)
+
+
+state 82
+
+   30 VAR: IDENT '=' EXPR .
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 30 (VAR)
+
+
+state 83
+
+   88 COND_EXPR: LOG_EXPR . '?' EXPR ':' EXPR
+
+    '?'  shift, and go to state 120
+
+
+state 84
+
+   78 EXPR: COND_EXPR .
+
+    $default  reduce using rule 78 (EXPR)
+
+
+state 85
+
+   34 SUBSCRIPT: '[' . EXPR ']'
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 121
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 86
+
+   32 SUBSCRIPTS: SUBSCRIPTS SUBSCRIPT .
+
+    $default  reduce using rule 32 (SUBSCRIPTS)
+
+
+state 87
+
+   29 VAR: IDENT . SUBSCRIPTS
+   30    | IDENT . '=' EXPR
+   31    | IDENT . '=' STRING_CONST
+
+    '='  shift, and go to state 50
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 51
+
+
+state 88
+
+   28 VAR_LIST: VAR_LIST ',' VAR .
+
+    $default  reduce using rule 28 (VAR_LIST)
+
+
+state 89
+
+   42 FORM_PARAM: DATA_TYPE IDENT .
+
+    $default  reduce using rule 42 (FORM_PARAM)
+
+
+state 90
+
+   37 FUN_HEAD: IDENT '(' FORM_PARAMS ')' .
+
+    $default  reduce using rule 37 (FUN_HEAD)
+
+
+state 91
+
+   41 FORM_PARAM_LIST: FORM_PARAM_LIST ',' . FORM_PARAM
+
+    KW_CHAR      shift, and go to state 2
+    KW_UNSIGNED  shift, and go to state 3
+    KW_SHORT     shift, and go to state 4
+    KW_INT       shift, and go to state 5
+    KW_LONG      shift, and go to state 6
+    KW_FLOAT     shift, and go to state 7
+    KW_DOUBLE    shift, and go to state 9
+    KW_STRUCT    shift, and go to state 10
+
+    DATA_TYPE   go to state 56
+    STRUCTURE   go to state 16
+    FORM_PARAM  go to state 122
+
+
+state 92
+
+   67 ASSIGNMENT: IDENT . QUALIF '=' EXPR
+
+    '.'  shift, and go to state 65
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 66
+    QUALIF      go to state 123
+
+
+state 93
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT . ';' LOG_EXPR ';' INCR ')' BLOCK
+
+    ';'  shift, and go to state 124
+
+
+state 94
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+
+state 95
+
+   83 IF_INSTR: KW_IF '(' LOG_EXPR . ')' BLOCK ELSE_PART
+   88 COND_EXPR: LOG_EXPR . '?' EXPR ':' EXPR
+
+    ')'  shift, and go to state 125
+    '?'  shift, and go to state 120
+
+
+state 96
+
+   86 WHILE_INSTR: KW_WHILE '(' LOG_EXPR . ')' BLOCK
+   88 COND_EXPR: LOG_EXPR . '?' EXPR ':' EXPR
+
+    ')'  shift, and go to state 126
+    '?'  shift, and go to state 120
+
+
+state 97
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE . '(' LOG_EXPR ')' ';'
+
+    '('  shift, and go to state 127
+
+
+state 98
+
+   63 ACT_PARAM: STRING_CONST .
+
+    $default  reduce using rule 63 (ACT_PARAM)
+
+
+state 99
+
+   57 FUN_CALL: IDENT '(' ACT_PARAMS . ')' ';'
+
+    ')'  shift, and go to state 128
+
+
+state 100
+
+   58 ACT_PARAMS: ACT_PARAM_LIST .
+   61 ACT_PARAM_LIST: ACT_PARAM_LIST . ',' ACT_PARAM
+
+    ','  shift, and go to state 129
+
+    $default  reduce using rule 58 (ACT_PARAMS)
+
+
+state 101
+
+   60 ACT_PARAM_LIST: ACT_PARAM .
+
+    $default  reduce using rule 60 (ACT_PARAM_LIST)
+
+
+state 102
+
+   62 ACT_PARAM: EXPR .
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 62 (ACT_PARAM)
+
+
+state 103
+
+   66 QUALIF: '.' IDENT . QUALIF
+
+    '.'  shift, and go to state 65
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 66
+    QUALIF      go to state 130
+
+
+state 104
+
+   64 INCR: IDENT QUALIF INC .
+
+    $default  reduce using rule 64 (INCR)
+
+
+state 105
+
+   67 ASSIGNMENT: IDENT QUALIF '=' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 131
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 106
+
+   46 DECL_LIST: DECL_LIST S_DECLARATION .
+
+    $default  reduce using rule 46 (DECL_LIST)
+
+
+state 107
+
+   44 BLOCK: '{' DECL_LIST INSTR_LIST . '}'
+   47 INSTR_LIST: INSTR_LIST . INSTRUCTION
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '}'       shift, and go to state 132
+
+    INSTRUCTION  go to state 133
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 108
+
+   21 STRUCTURE: KW_STRUCT OPT_TAG '{' FIELD_LIST '}' .
+
+    $default  reduce using rule 21 (STRUCTURE)
+
+
+state 109
+
+   25 FIELD_LIST: FIELD_LIST FIELD .
+
+    $default  reduce using rule 25 (FIELD_LIST)
+
+
+state 110
+
+   71 EXPR: IDENT QUALIF .
+
+    $default  reduce using rule 71 (EXPR)
+
+
+state 111
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   76     | '-' EXPR .
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 76 (EXPR)]
+    '<'       [reduce using rule 76 (EXPR)]
+    '>'       [reduce using rule 76 (EXPR)]
+    $default  reduce using rule 76 (EXPR)
+
+
+state 112
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   77     | '(' EXPR . ')'
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    ')'  shift, and go to state 134
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+
+state 113
+
+   80 LOG_EXPR: EXPR LE . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 135
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 114
+
+   72 EXPR: EXPR '+' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 136
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 115
+
+   73 EXPR: EXPR '-' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 137
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 116
+
+   74 EXPR: EXPR '*' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 138
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 117
+
+   75 EXPR: EXPR '/' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 139
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 118
+
+   81 LOG_EXPR: EXPR '<' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 140
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 119
+
+   82 LOG_EXPR: EXPR '>' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 141
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 120
+
+   88 COND_EXPR: LOG_EXPR '?' . EXPR ':' EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 142
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 121
+
+   34 SUBSCRIPT: '[' EXPR . ']'
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    ']'  shift, and go to state 143
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+
+state 122
+
+   41 FORM_PARAM_LIST: FORM_PARAM_LIST ',' FORM_PARAM .
+
+    $default  reduce using rule 41 (FORM_PARAM_LIST)
+
+
+state 123
+
+   67 ASSIGNMENT: IDENT QUALIF . '=' EXPR
+
+    '='  shift, and go to state 105
+
+
+state 124
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' . LOG_EXPR ';' INCR ')' BLOCK
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 94
+    LOG_EXPR   go to state 144
+    COND_EXPR  go to state 84
+
+
+state 125
+
+   83 IF_INSTR: KW_IF '(' LOG_EXPR ')' . BLOCK ELSE_PART
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 145
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 126
+
+   86 WHILE_INSTR: KW_WHILE '(' LOG_EXPR ')' . BLOCK
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 146
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 127
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE '(' . LOG_EXPR ')' ';'
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 94
+    LOG_EXPR   go to state 147
+    COND_EXPR  go to state 84
+
+
+state 128
+
+   57 FUN_CALL: IDENT '(' ACT_PARAMS ')' . ';'
+
+    ';'  shift, and go to state 148
+
+
+state 129
+
+   61 ACT_PARAM_LIST: ACT_PARAM_LIST ',' . ACT_PARAM
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    STRING_CONST   shift, and go to state 98
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    ACT_PARAM  go to state 149
+    NUMBER     go to state 81
+    EXPR       go to state 102
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 130
+
+   66 QUALIF: '.' IDENT QUALIF .
+
+    $default  reduce using rule 66 (QUALIF)
+
+
+state 131
+
+   67 ASSIGNMENT: IDENT QUALIF '=' EXPR .
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 67 (ASSIGNMENT)
+
+
+state 132
+
+   44 BLOCK: '{' DECL_LIST INSTR_LIST '}' .
+
+    $default  reduce using rule 44 (BLOCK)
+
+
+state 133
+
+   47 INSTR_LIST: INSTR_LIST INSTRUCTION .
+
+    $default  reduce using rule 47 (INSTR_LIST)
+
+
+state 134
+
+   77 EXPR: '(' EXPR ')' .
+
+    $default  reduce using rule 77 (EXPR)
+
+
+state 135
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   80         | EXPR LE EXPR .
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 80 (LOG_EXPR)
+
+
+state 136
+
+   72 EXPR: EXPR . '+' EXPR
+   72     | EXPR '+' EXPR .
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 72 (EXPR)]
+    '<'       [reduce using rule 72 (EXPR)]
+    '>'       [reduce using rule 72 (EXPR)]
+    $default  reduce using rule 72 (EXPR)
+
+
+state 137
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   73     | EXPR '-' EXPR .
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 73 (EXPR)]
+    '<'       [reduce using rule 73 (EXPR)]
+    '>'       [reduce using rule 73 (EXPR)]
+    $default  reduce using rule 73 (EXPR)
+
+
+state 138
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   74     | EXPR '*' EXPR .
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 74 (EXPR)]
+    '<'       [reduce using rule 74 (EXPR)]
+    '>'       [reduce using rule 74 (EXPR)]
+    $default  reduce using rule 74 (EXPR)
+
+
+state 139
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   75     | EXPR '/' EXPR .
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 75 (EXPR)]
+    '<'       [reduce using rule 75 (EXPR)]
+    '>'       [reduce using rule 75 (EXPR)]
+    $default  reduce using rule 75 (EXPR)
+
+
+state 140
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   81         | EXPR '<' EXPR .
+   82         | EXPR . '>' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 81 (LOG_EXPR)
+
+
+state 141
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+   82         | EXPR '>' EXPR .
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    $default  reduce using rule 82 (LOG_EXPR)
+
+
+state 142
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+   88 COND_EXPR: LOG_EXPR '?' EXPR . ':' EXPR
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+    ':'  shift, and go to state 150
+
+
+state 143
+
+   34 SUBSCRIPT: '[' EXPR ']' .
+
+    $default  reduce using rule 34 (SUBSCRIPT)
+
+
+state 144
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR . ';' INCR ')' BLOCK
+   88 COND_EXPR: LOG_EXPR . '?' EXPR ':' EXPR
+
+    ';'  shift, and go to state 151
+    '?'  shift, and go to state 120
+
+
+state 145
+
+   83 IF_INSTR: KW_IF '(' LOG_EXPR ')' BLOCK . ELSE_PART
+
+    KW_ELSE  shift, and go to state 152
+
+    KW_ELSE   [reduce using rule 85 (ELSE_PART)]
+    $default  reduce using rule 85 (ELSE_PART)
+
+    ELSE_PART  go to state 153
+
+
+state 146
+
+   86 WHILE_INSTR: KW_WHILE '(' LOG_EXPR ')' BLOCK .
+
+    $default  reduce using rule 86 (WHILE_INSTR)
+
+
+state 147
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE '(' LOG_EXPR . ')' ';'
+   88 COND_EXPR: LOG_EXPR . '?' EXPR ':' EXPR
+
+    ')'  shift, and go to state 154
+    '?'  shift, and go to state 120
+
+
+state 148
+
+   57 FUN_CALL: IDENT '(' ACT_PARAMS ')' ';' .
+
+    $default  reduce using rule 57 (FUN_CALL)
+
+
+state 149
+
+   61 ACT_PARAM_LIST: ACT_PARAM_LIST ',' ACT_PARAM .
+
+    $default  reduce using rule 61 (ACT_PARAM_LIST)
+
+
+state 150
+
+   88 COND_EXPR: LOG_EXPR '?' EXPR ':' . EXPR
+
+    INTEGER_CONST  shift, and go to state 75
+    FLOAT_CONST    shift, and go to state 76
+    IDENT          shift, and go to state 78
+    '-'            shift, and go to state 79
+    '('            shift, and go to state 80
+
+    NUMBER     go to state 81
+    EXPR       go to state 155
+    LOG_EXPR   go to state 83
+    COND_EXPR  go to state 84
+
+
+state 151
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR ';' . INCR ')' BLOCK
+
+    IDENT  shift, and go to state 156
+
+    INCR  go to state 157
+
+
+state 152
+
+   84 ELSE_PART: KW_ELSE . BLOCK
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 158
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 153
+
+   83 IF_INSTR: KW_IF '(' LOG_EXPR ')' BLOCK ELSE_PART .
+
+    $default  reduce using rule 83 (IF_INSTR)
+
+
+state 154
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE '(' LOG_EXPR ')' . ';'
+
+    ';'  shift, and go to state 159
+
+
+state 155
+
+   72 EXPR: EXPR . '+' EXPR
+   73     | EXPR . '-' EXPR
+   74     | EXPR . '*' EXPR
+   75     | EXPR . '/' EXPR
+   80 LOG_EXPR: EXPR . LE EXPR
+   81         | EXPR . '<' EXPR
+   82         | EXPR . '>' EXPR
+   88 COND_EXPR: LOG_EXPR '?' EXPR ':' EXPR .
+
+    LE   shift, and go to state 113
+    '+'  shift, and go to state 114
+    '-'  shift, and go to state 115
+    '*'  shift, and go to state 116
+    '/'  shift, and go to state 117
+    '<'  shift, and go to state 118
+    '>'  shift, and go to state 119
+
+    LE        [reduce using rule 88 (COND_EXPR)]
+    '+'       [reduce using rule 88 (COND_EXPR)]
+    '-'       [reduce using rule 88 (COND_EXPR)]
+    '*'       [reduce using rule 88 (COND_EXPR)]
+    '/'       [reduce using rule 88 (COND_EXPR)]
+    '<'       [reduce using rule 88 (COND_EXPR)]
+    '>'       [reduce using rule 88 (COND_EXPR)]
+    $default  reduce using rule 88 (COND_EXPR)
+
+
+state 156
+
+   64 INCR: IDENT . QUALIF INC
+
+    '.'  shift, and go to state 65
+
+    $default  reduce using rule 33 (SUBSCRIPTS)
+
+    SUBSCRIPTS  go to state 66
+    QUALIF      go to state 160
+
+
+state 157
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR ';' INCR . ')' BLOCK
+
+    ')'  shift, and go to state 161
+
+
+state 158
+
+   84 ELSE_PART: KW_ELSE BLOCK .
+
+    $default  reduce using rule 84 (ELSE_PART)
+
+
+state 159
+
+   87 DO_WHILE: KW_DO BLOCK KW_WHILE '(' LOG_EXPR ')' ';' .
+
+    $default  reduce using rule 87 (DO_WHILE)
+
+
+state 160
+
+   64 INCR: IDENT QUALIF . INC
+
+    INC  shift, and go to state 104
+
+
+state 161
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR ';' INCR ')' . BLOCK
+
+    KW_FOR    shift, and go to state 33
+    KW_IF     shift, and go to state 34
+    KW_WHILE  shift, and go to state 35
+    KW_DO     shift, and go to state 36
+    IDENT     shift, and go to state 37
+    ';'       shift, and go to state 38
+    '{'       shift, and go to state 39
+
+    BLOCK        go to state 162
+    INSTRUCTION  go to state 41
+    FUN_CALL     go to state 42
+    INCR         go to state 43
+    ASSIGNMENT   go to state 44
+    FOR_INSTR    go to state 45
+    IF_INSTR     go to state 46
+    WHILE_INSTR  go to state 47
+    DO_WHILE     go to state 48
+
+
+state 162
+
+   79 FOR_INSTR: KW_FOR '(' ASSIGNMENT ';' LOG_EXPR ';' INCR ')' BLOCK .
+
+    $default  reduce using rule 79 (FOR_INSTR)

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pajeczaki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <autor>
+	<nazwisko>Nazwisko1</nazwisko>
+	<imie>Imie1</imie>
+   </autor>
+
+   <pajaki gatunek="tygrzyk"  chroniony="tak" wyst_polska="tak">
+		   <nazwa jezyk="polska">Tygrzyk Paskowany</nazwa>
+		   <nazwa jezyk="lacinska">Argiope bruennichi</nazwa>
+		   <gromada>Pajeczaki</gromada>
+		   <wystepowanie>
+			   <swiat>
+				   <kontynent>Europa</kontynent>
+				   <kontynent>Azja</kontynent>
+				</swiat>
+				<obszar>
+					<teren>wysoka trawa</teren>
+					<teren>suche laki</teren>
+					<teren>wilgotne laki</teren>
+					<teren>nieuzytki</teren>
+					<teren>skraje mlodnikow</teren>
+					<teren>brzegi zbiornikow wodnych</teren>
+					<teren>ogrody</teren>
+				</obszar>
+			   <srodowisko jakie="ladowe" />
+		   </wystepowanie>
+		   <opis czego="Cechy">Samica: jej glowotulow pokryty jest gestym srebrzystym wlosem, a na jaskrawozoltym odwloku posiada czarne poprzeczne prazki. Ten paskowany wzor upodabnia ja nieco do osy. Samiec: jest bardzo niepozorny, jego srebrzystoszary odwlok urozmaica jedynie szara podluzna lata na srodku i ciemniejsze kropki po bokach.
+		   </opis>
+		   <opis czego="Pokarm">Pajak ten jest bardzo "wybredny", gdyz poluje tylko na owady z rzedu prostoskrzydlych i wazek, ktore charakteryzuja sie stosunkowo duzymi rozmiarami.
+		   </opis>
+		   <opis czego="Wymiary">Samica osiaga dlugosc ok. 25 mm. Samiec jest bardzo niepozorny, nie przekracza 5,5 mm dlugosci. 
+		   </opis>
+		   <zdjecie zrodlo="Gfx\tygrzyk10_mlody2.jpg"></zdjecie>
+		   <zdjecie zrodlo="Gfx\tygrzyk12_ml_samica.jpg"></zdjecie>
+		   <zdjecie zrodlo="Gfx\tygrzyk12_ml_samiec.jpg"></zdjecie>
+		   <zdjecie zrodlo="Gfx\tygrzyk14_obiad.jpg"></zdjecie>
+		   <linki href="http://pl.wikipedia.org/wiki/Tygrzyk_paskowany">http://pl.wikipedia.org/wiki/Tygrzyk_paskowany</linki>
+		   <linki href="http://www.salamandra.org.pl/magazyn/b08a07.html">http://www.salamandra.org.pl/magazyn/b08a07.html</linki>
+		   <linki href="http://www.eko.org.pl/otop-leszno/tygrzyk.php">http://www.eko.org.pl/otop-leszno/tygrzyk.php</linki>
+		   <linki href="http://www.bocian.org.pl/biuletyn/2001/b2a23.php">http://www.bocian.org.pl/biuletyn/2001/b2a23.php</linki>
+		   <linki href="http://grzesiak.kei.pl/jurek/lista161.html">http://grzesiak.kei.pl/jurek/lista161.html</linki>
+		   <data>2005-12-11</data>
+	</pajaki>
+	   
+	<pajaki gatunek="krzyzak" chroniony="nie" wyst_polska="tak">
+		<nazwa jezyk="polska">Krzyzak Ogrodowy</nazwa>
+		<nazwa jezyk="lacinska">Araneus diadematus</nazwa>
+		<gromada>Pajeczaki</gromada>
+		<wystepowanie>
+			<swiat>
+				<kontynent>Europa</kontynent>
+				<kontynent>Azja</kontynent>
+			</swiat>
+			<obszar>
+				<teren>krzewy</teren>
+				<teren>drzewa</teren>
+				<teren>ogrody</teren>
+				<teren>zarosla</teren>
+				<teren>mlodniki sosnowe</teren>
+			</obszar>
+			<srodowisko jakie="ladowe" />
+		</wystepowanie>
+		<opis czego="Cechy">Na odwloku jasne plamy ukladaja sie w charakterystyczny ksztalt krzyza, po ktorym latwo tego pajaka rozpoznac. Kolor pajaka to mniej lub bardziej jasny odcien brazu. Cecha charakterystyczna jest obecnosc 4 par nog krocznych na tulowiu. Aparat gebowy tworza szczekoczulki i nagoglaszczki. Odwlok zawsze pozbawiony nog, przewaznie jest pekaty. Samce sa zwykle niewielkie, natomiast samice sa znacznie wieksze dzieki odwlokowi wypelnonienemu jajami. 
+		</opis>
+		<opis czego="Pokarm">Pajak poluje na wszelkie owady, muchy, motyle, cmy itp. Krzyzak Ogrodowy najczesciej siedzi na srodku pajeczyny czekajac na zdobycz. Gdy ta wleci w pajeczyne, pajak w mgnieniu oka, podbiega do ofiary, unieruchamia ja, wstrzykujac jad i oplatajac pajeczyna.
+		</opis>
+		<opis czego="Wymiary">Krzyzak ogrodowy osiaga dlugosc do 1,7 cm.
+		</opis>
+		<zdjecie zrodlo="Gfx/krzyzak.jpg"></zdjecie>
+		<zdjecie zrodlo="Gfx/krzyzak17.jpg"></zdjecie>
+		<zdjecie zrodlo="Gfx/krzyzak19.jpg"></zdjecie>
+		<zdjecie zrodlo="Gfx/krzyzak2.jpg"></zdjecie>
+		<linki href="http://www.nuzban.scholaris.pl/zwierz/k/krzyzogr.htm">http://www.nuzban.scholaris.pl/zwierz/k/krzyzogr.htm</linki>
+		<linki href="http://pl.wikipedia.org/wiki/Krzy%C5%BCak_ogrodowy">http://pl.wikipedia.org/wiki/Krzy%C5%BCak_ogrodowy</linki>
+		<linki href="http://www.nuzban.scholaris.pl/zwierz/k/krzyzogr.htm">http://www.nuzban.scholaris.pl/zwierz/k/krzyzogr.htm</linki>
+		<linki href="http://www.nwspiders.org/araneus.diadematus.html">http://www.nwspiders.org/araneus.diadematus.html</linki>
+		<data>2005-12-11</data>
+	</pajaki>
+   
+   <skorpiony gatunek="polny" chroniony="tak" wyst_polska="nie">
+			<nazwa jezyk="polska">Skorpion Polny</nazwa>
+			<nazwa jezyk="lacinska">Buthus Occitanus</nazwa>
+			<gromada>Pajeczaki</gromada>
+			<wystepowanie>
+				<swiat>
+					<kontynent>Europa (poludnie)</kontynent>
+					<kontynent>Afryka (polnoc)</kontynent>
+				</swiat>
+				<obszar>
+					<teren>stepy</teren>
+					<teren>obszary pustynne</teren>
+					<teren>obszary gorzyste</teren>
+				</obszar>
+				<srodowisko jakie="ladowe"></srodowisko>
+			</wystepowanie>
+			<opis czego="Cechy">Posiadajac male kleszcze i gruby ogon, ten bardzo jadowity gatunek jest typowym przedstawicielem rodziny skorpionow Buthidae. W Europie powszechna jest mniej jadowita odmiana tego gatunku, charakteryzujacy sie bardziej brazowym zabarwieniem ciala. Natomiast odmiana zolta, wystepujaca glownie w Afryce, nalezy do najbardziej jadowitych skorpionow swiata. Dymorfizm plciowy jest slabo rozroznialny u tych osobnikow. Liczba "zebow" na pektynach u samicy wynosi od 19 do 30, natomiast u samca 25 do 36. Pektyny samca sa dluzsze.	
+			</opis>
+			<opis czego="Pokarm">Osobnik nalezy do niezwykle szybkich i agresywnych skorpionow, bedac dokonalym mysliwym. zywi sie glownie swierszczami, malymi karaczanami i innymi drobnymi owadami. W naturze czesto zjadaja inne skorpiony, takze swojego gatunku.
+			</opis>
+			<opis czego="Wymiary">Skorpion polny osiaga rozmiary od 5-8 cm.
+			</opis> 
+			<zdjecie zrodlo="Gfx/skorpion1.jpg"></zdjecie>
+			<zdjecie zrodlo="Gfx/skorpion16.jpg"></zdjecie>
+			<zdjecie zrodlo="Gfx/skorpion18_eat.jpg"></zdjecie>
+			<zdjecie zrodlo="Gfx/skorpion6.jpg"></zdjecie>
+			<linki href="http://www.arachne.boo.pl/articles.php?id=34">www.arachne.boo.pl/articles.php?id=34</linki>
+			<linki href="http://terrarystyka.pl/gatunki.php?id=20020714130727">http://terrarystyka.pl/gatunki.php?id=20020714130727</linki>
+			<linki href="http://www.skorpione.de/htm/galerie/b_occitanus.htm">http://www.skorpione.de/htm/galerie/b_occitanus.htm</linki>
+			<linki href="http://www.bugsincyberspace.com/scorpions/buthus_occitanus.html">http://www.bugsincyberspace.com/scorpions/buthus_occitanus.html</linki>
+			<data>2005-12-11</data>
+	</skorpiony>
+   </pajeczaki>

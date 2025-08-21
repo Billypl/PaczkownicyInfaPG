@@ -1,0 +1,470 @@
+int                 KW_INT          
+a                   IDENT           a
+;                   ;               
+======== FOUND: VAR 'a' ========
+float               KW_FLOAT        
+a1                  IDENT           a1
+,                   ,               
+======== FOUND: VAR 'a1' ========
+_b                  IDENT           _b
+,                   ,               
+======== FOUND: VAR '_b' ========
+_00                 IDENT           _00
+;                   ;               
+======== FOUND: VAR '_00' ========
+double              KW_DOUBLE       
+PI                  IDENT           PI
+=                   =               
+3.1415926           FLOAT_CONST     3.1415926
+;                   ;               
+======== FOUND: VAR 'PI' ========
+unsigned            KW_UNSIGNED     
+char                KW_CHAR         
+c                   IDENT           c
+;                   ;               
+======== FOUND: VAR 'c' ========
+int                 KW_INT          
+fromASCII           IDENT           fromASCII
+=                   =               
+128                 INTEGER_CONST   128
+,                   ,               
+======== FOUND: VAR 'fromASCII' ========
+toASCII             IDENT           toASCII
+=                   =               
+255                 INTEGER_CONST   255
+;                   ;               
+======== FOUND: VAR 'toASCII' ========
+int                 KW_INT          
+t                   IDENT           t
+[                   [               
+10                  INTEGER_CONST   10
+]                   ]               
+;                   ;               
+======== FOUND: VAR 't' ========
+struct              KW_STRUCT       
+data                IDENT           data
+{                   {               
+int                 KW_INT          
+year                IDENT           year
+;                   ;               
+======== FOUND: VAR 'year' ========
+int                 KW_INT          
+month               IDENT           month
+,                   ,               
+======== FOUND: VAR 'month' ========
+day                 IDENT           day
+;                   ;               
+======== FOUND: VAR 'day' ========
+}                   }               
+d                   IDENT           d
+;                   ;               
+======== FOUND: VAR 'd' ========
+void                KW_VOID         
+EmptyFunction       IDENT           EmptyFunction
+(                   (               
+void                KW_VOID         
+)                   )               
+======== FOUND: FUN_HEAD 'EmptyFunction' ========
+{                   {               
+}                   }               
+======== FOUND: BLOCK  ========
+======== FOUND: S_FUNCTION 'EmptyFunction' ========
+int                 KW_INT          
+EmptyFunctionWithParIDENT           EmptyFunctionWithParameters
+(                   (               
+int                 KW_INT          
+a                   IDENT           a
+======== FOUND: FORM_PARAM 'a' ========
+,                   ,               
+double              KW_DOUBLE       
+d                   IDENT           d
+======== FOUND: FORM_PARAM 'd' ========
+)                   )               
+======== FOUND: FUN_HEAD 'EmptyFunctionWithParameters' ========
+{                   {               
+}                   }               
+======== FOUND: BLOCK  ========
+======== FOUND: S_FUNCTION 'EmptyFunctionWithParameters' ========
+float               KW_FLOAT        
+FunctionWithDeclaratIDENT           FunctionWithDeclarationOfVariables
+(                   (               
+double              KW_DOUBLE       
+d                   IDENT           d
+======== FOUND: FORM_PARAM 'd' ========
+)                   )               
+======== FOUND: FUN_HEAD 'FunctionWithDeclarationOfVariables' ========
+{                   {               
+int                 KW_INT          
+a                   IDENT           a
+;                   ;               
+======== FOUND: VAR 'a' ========
+======== FOUND: DECL_LIST  ========
+double              KW_DOUBLE       
+half                IDENT           half
+=                   =               
+.5                  FLOAT_CONST     .5
+;                   ;               
+======== FOUND: VAR 'half' ========
+======== FOUND: DECL_LIST  ========
+int                 KW_INT          
+t                   IDENT           t
+[                   [               
+7                   INTEGER_CONST   7
+]                   ]               
+;                   ;               
+======== FOUND: VAR 't' ========
+======== FOUND: DECL_LIST  ========
+struct              KW_STRUCT       
+data                IDENT           data
+{                   {               
+int                 KW_INT          
+year                IDENT           year
+,                   ,               
+======== FOUND: VAR 'year' ========
+month               IDENT           month
+;                   ;               
+======== FOUND: VAR 'month' ========
+int                 KW_INT          
+day                 IDENT           day
+;                   ;               
+======== FOUND: VAR 'day' ========
+}                   }               
+d1                  IDENT           d1
+;                   ;               
+======== FOUND: VAR 'd1' ========
+======== FOUND: DECL_LIST  ========
+}                   }               
+======== FOUND: BLOCK  ========
+======== FOUND: S_FUNCTION 'FunctionWithDeclarationOfVariables' ========
+int                 KW_INT          
+x1                  IDENT           x1
+=                   =               
+fromASCII           IDENT           fromASCII
++                   +               
+2                   INTEGER_CONST   2
+*                   *               
+(                   (               
+20                  INTEGER_CONST   20
++                   +               
+toASCII             IDENT           toASCII
+)                   )               
+;                   ;               
+======== FOUND: VAR 'x1' ========
+double              KW_DOUBLE       
+realTest            IDENT           realTest
+=                   =               
+12.34               FLOAT_CONST     12.34
++                   +               
+.56                 FLOAT_CONST     .56
++                   +               
+78.                 FLOAT_CONST     78.
+;                   ;               
+======== FOUND: VAR 'realTest' ========
+void                KW_VOID         
+main                IDENT           main
+(                   (               
+void                KW_VOID         
+)                   )               
+======== FOUND: FUN_HEAD 'main' ========
+{                   {               
+int                 KW_INT          
+a                   IDENT           a
+=                   =               
+1                   INTEGER_CONST   1
+,                   ,               
+======== FOUND: VAR 'a' ========
+b                   IDENT           b
+,                   ,               
+======== FOUND: VAR 'b' ========
+c                   IDENT           c
+,                   ,               
+======== FOUND: VAR 'c' ========
+m                   IDENT           m
+;                   ;               
+======== FOUND: VAR 'm' ========
+======== FOUND: DECL_LIST  ========
+int                 KW_INT          
+t                   IDENT           t
+[                   [               
+3                   INTEGER_CONST   3
+]                   ]               
+;                   ;               
+======== FOUND: VAR 't' ========
+======== FOUND: DECL_LIST  ========
+struct              KW_STRUCT       
+data                IDENT           data
+{                   {               
+int                 KW_INT          
+day                 IDENT           day
+,                   ,               
+======== FOUND: VAR 'day' ========
+month               IDENT           month
+,                   ,               
+======== FOUND: VAR 'month' ========
+year                IDENT           year
+;                   ;               
+======== FOUND: VAR 'year' ========
+}                   }               
+d                   IDENT           d
+;                   ;               
+======== FOUND: VAR 'd' ========
+======== FOUND: DECL_LIST  ========
+EmptyFunction       IDENT           EmptyFunction
+(                   (               
+)                   )               
+;                   ;               
+======== FOUND: FUN_CALL 'EmptyFunction' ========
+EmptyFunctionWithParIDENT           EmptyFunctionWithParameters
+(                   (               
+"x"                 STRING_CONST    "x"
+======== FOUND: ACT_PARAM  ========
+,                   ,               
+123                 INTEGER_CONST   123
+,                   ,               
+======== FOUND: ACT_PARAM  ========
+12.34               FLOAT_CONST     12.34
+)                   )               
+======== FOUND: ACT_PARAM  ========
+;                   ;               
+======== FOUND: FUN_CALL 'EmptyFunctionWithParameters' ========
+printf              IDENT           printf
+(                   (               
+"\n\n\nExtended ASCISTRING_CONST    "\n\n\nExtended ASCII codes\n\n"
+======== FOUND: ACT_PARAM  ========
+)                   )               
+;                   ;               
+======== FOUND: FUN_CALL 'printf' ========
+for                 KW_FOR          
+(                   (               
+uc                  IDENT           uc
+=                   =               
+fromASCII           IDENT           fromASCII
+;                   ;               
+======== FOUND: ASSIGNMENT 'uc' ========
+uc                  IDENT           uc
+<=                  LE              
+toASCII             IDENT           toASCII
+;                   ;               
+uc1                 IDENT           uc1
+++                  INC             
+======== FOUND: INCR 'uc1' ========
+)                   )               
+{                   {               
+int                 KW_INT          
+a                   IDENT           a
+;                   ;               
+======== FOUND: VAR 'a' ========
+======== FOUND: DECL_LIST  ========
+int                 KW_INT          
+t                   IDENT           t
+[                   [               
+2                   INTEGER_CONST   2
+]                   ]               
+;                   ;               
+======== FOUND: VAR 't' ========
+======== FOUND: DECL_LIST  ========
+t                   IDENT           t
+[                   [               
+0                   INTEGER_CONST   0
+]                   ]               
+=                   =               
+1                   INTEGER_CONST   1
+;                   ;               
+======== FOUND: ASSIGNMENT 't' ========
+t                   IDENT           t
+[                   [               
+1                   INTEGER_CONST   1
+]                   ]               
+=                   =               
+t                   IDENT           t
+[                   [               
+0                   INTEGER_CONST   0
+]                   ]               
+;                   ;               
+======== FOUND: ASSIGNMENT 't' ========
+printf              IDENT           printf
+(                   (               
+"%3d:%2c"           STRING_CONST    "%3d:%2c"
+======== FOUND: ACT_PARAM  ========
+,                   ,               
+uc                  IDENT           uc
+,                   ,               
+======== FOUND: ACT_PARAM  ========
+uc                  IDENT           uc
+)                   )               
+======== FOUND: ACT_PARAM  ========
+;                   ;               
+======== FOUND: FUN_CALL 'printf' ========
+printf              IDENT           printf
+(                   (               
+",%d\n"             STRING_CONST    ",%d\n"
+======== FOUND: ACT_PARAM  ========
+,                   ,               
+t                   IDENT           t
+[                   [               
+1                   INTEGER_CONST   1
+]                   ]               
+)                   )               
+======== FOUND: ACT_PARAM  ========
+;                   ;               
+======== FOUND: FUN_CALL 'printf' ========
+d                   IDENT           d
+.                   .               
+day                 IDENT           day
+=                   =               
+1                   INTEGER_CONST   1
+;                   ;               
+======== FOUND: ASSIGNMENT 'd' ========
+}                   }               
+======== FOUND: BLOCK  ========
+======== FOUND: FOR_INSTR  ========
+if                  KW_IF           
+(                   (               
+a                   IDENT           a
+>                   >               
+10                  INTEGER_CONST   10
+)                   )               
+b                   IDENT           b
+=                   =               
+a                   IDENT           a
+;                   ;               
+======== FOUND: ASSIGNMENT 'b' ========
+if                  KW_IF           
+======== FOUND: IF_INSTR  ========
+(                   (               
+a                   IDENT           a
+>                   >               
+1                   INTEGER_CONST   1
+)                   )               
+b                   IDENT           b
+=                   =               
+a                   IDENT           a
+;                   ;               
+======== FOUND: ASSIGNMENT 'b' ========
+else                KW_ELSE         
+b                   IDENT           b
+=                   =               
+1                   INTEGER_CONST   1
+;                   ;               
+======== FOUND: ASSIGNMENT 'b' ========
+======== FOUND: IF_INSTR  ========
+if                  KW_IF           
+(                   (               
+a                   IDENT           a
+>                   >               
+b                   IDENT           b
+)                   )               
+if                  KW_IF           
+(                   (               
+a                   IDENT           a
+>                   >               
+c                   IDENT           c
+)                   )               
+m                   IDENT           m
+=                   =               
+a                   IDENT           a
+;                   ;               
+======== FOUND: ASSIGNMENT 'm' ========
+else                KW_ELSE         
+m                   IDENT           m
+=                   =               
+c                   IDENT           c
+;                   ;               
+======== FOUND: ASSIGNMENT 'm' ========
+======== FOUND: IF_INSTR  ========
+else                KW_ELSE         
+if                  KW_IF           
+(                   (               
+b                   IDENT           b
+>                   >               
+c                   IDENT           c
+)                   )               
+m                   IDENT           m
+=                   =               
+b                   IDENT           b
+;                   ;               
+======== FOUND: ASSIGNMENT 'm' ========
+else                KW_ELSE         
+m                   IDENT           m
+=                   =               
+c                   IDENT           c
+;                   ;               
+======== FOUND: ASSIGNMENT 'm' ========
+======== FOUND: IF_INSTR  ========
+======== FOUND: IF_INSTR  ========
+while               KW_WHILE        
+(                   (               
+a                   IDENT           a
+>                   >               
+1                   INTEGER_CONST   1
+)                   )               
+a                   IDENT           a
+=                   =               
+a                   IDENT           a
+-                   -               
+2                   INTEGER_CONST   2
+;                   ;               
+======== FOUND: ASSIGNMENT 'a' ========
+======== FOUND: WHILE_INSTR  ========
+d                   IDENT           d
+.                   .               
+year                IDENT           year
+=                   =               
+2010                INTEGER_CONST   2010
+;                   ;               
+======== FOUND: ASSIGNMENT 'd' ========
+do                  KW_DO           
+{                   {               
+a                   IDENT           a
+++                  INC             
+======== FOUND: INCR 'a' ========
+;                   ;               
+d                   IDENT           d
+.                   .               
+year                IDENT           year
+++                  INC             
+======== FOUND: INCR 'd' ========
+;                   ;               
+}                   }               
+======== FOUND: BLOCK  ========
+while               KW_WHILE        
+(                   (               
+a                   IDENT           a
+<                   <               
+1                   INTEGER_CONST   1
+)                   )               
+;                   ;               
+======== FOUND: DO_WHILE  ========
+m                   IDENT           m
+=                   =               
+a                   IDENT           a
+>                   >               
+b                   IDENT           b
+?                   ?               
+(                   (               
+a                   IDENT           a
+>                   >               
+c                   IDENT           c
+?                   ?               
+a                   IDENT           a
+:                   :               
+c                   IDENT           c
+)                   )               
+======== FOUND: COND_EXPR  ========
+:                   :               
+(                   (               
+b                   IDENT           b
+>                   >               
+c                   IDENT           c
+?                   ?               
+b                   IDENT           b
+:                   :               
+c                   IDENT           c
+)                   )               
+======== FOUND: COND_EXPR  ========
+;                   ;               
+======== FOUND: COND_EXPR  ========
+======== FOUND: ASSIGNMENT 'm' ========
+}                   }               
+======== FOUND: BLOCK  ========
+======== FOUND: S_FUNCTION 'main' ========

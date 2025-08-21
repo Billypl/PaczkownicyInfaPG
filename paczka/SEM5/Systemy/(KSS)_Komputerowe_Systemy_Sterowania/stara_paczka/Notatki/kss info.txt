@@ -1,0 +1,4 @@
+notatki obejmuja:
+-graficzne przedstawienie splotu
+-definicje liniowoœci, przyczynowoœci, niezmienniczoœci
+-przejœcie z macierzy do równania ró¿nicowego
