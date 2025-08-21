@@ -1,32 +1,44 @@
+<!---------------- INTRO ------------------>
+<table>
+  <tr>
+    <td width="500px" align="left">
+      <a href="https://github.com/Billypl/PaczkownicyInfaPG/stargazers"><img src="https://img.shields.io/github/stars/Billypl/PaczkownicyInfaPG?style=for-the-badge" alt="Stargazers"/></a><a href="https://github.com/Billypl/PaczkownicyInfaPG/network/members"><img src="https://img.shields.io/github/forks/Billypl/PaczkownicyInfaPG?style=for-the-badge" alt="Forks"/></a>
+    </td>
+    <td width="500px" align="right">
+      <a href="https://github.com/Billypl/PaczkownicyInfaPG/issues"><img src="https://img.shields.io/github/issues/Billypl/PaczkownicyInfaPG.svg?style=for-the-badge" alt="Issues"/></a><a href="https://github.com/Billypl/PaczkownicyInfaPG/graphs/contributors"><img src="https://img.shields.io/github/contributors/Billypl/PaczkownicyInfaPG.svg?style=for-the-badge" alt="Contributors"/>
+    </td>
+  </tr>
+</table>
 
+<br clear="both"/>
 
-[![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
-[![Contributors][contributors-shield]][contributors-url]
+<h1 align="center">Paczka Updater</h1>
 
-# Paczka Updater
-[![YouTubeViews][youtube-views-shield]][youtube-url]
-[![OfficialDiscord][discord-shield]][discord-url]
+<div align="center">
+  <a href="https://youtu.be/tuTGdGo7trQ?si=UmZ2PyprnpxvG76_"><img src="https://img.shields.io/youtube/views/tuTGdGo7trQ?style=for-the-badge&logo=youtube&logoColor=red&label=tutorial%20views" alt="YouTube Views"/></a>&nbsp<a href="https://discord.gg/8MVeYzChkT"><img src="https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2" alt="Official Discord"/></a>
+</div>
 
+<div align="center">
+    <a href="https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing"><img src="https://img.shields.io/badge/oficjalna_paczka-gdrive-white?style=for-the-badge&logo=googledrive&logoColor=4286f5&labelColor=fabd03&color=34a853" alt="YouTube Views"/></a>
+</div>
+<br>
 
-
-Paczka Google Drive: https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing
+<div align="justify">
 
 Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na [google drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing). Dajcie gwiazdkę ⭐ na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
-
-Pozdrawiają,  
-*koledzy z poprzednich lat*
+</div>
+<div align="center">
+  <p>
+    Pozdrawiają,  <br>
+    <i>koledzy z poprzednich lat</i>
+  </p>
+</div>
 
 ![project cover](/docs/glowne_readme/repo_cover.png)
 
-## Paczka Tutorial all-in-one
-https://youtu.be/tuTGdGo7trQ
-[![Watch the video](https://img.youtube.com/vi/tuTGdGo7trQ/maxresdefault.jpg)](https://youtu.be/tuTGdGo7trQ)
 
 
-
-
+<!---------------- MAIN ------------------>
 ## Ważne!! - przeczytać przed dodawaniem do paczki:
 
 **[Tutorial all-in-one.](https://www.youtube.com/watch?v=tuTGdGo7trQ)** Zachęcam do subskrybcji.  
@@ -60,6 +72,11 @@ Aktualny postęp paczki można zobaczyć w podanych poniżej issuse'ach:
 - Puste foldery działają jak w githubie (nie są przesyłane). Jeżeli chcecie wysłać pusty folder, to stwórzcie plik ".gitkeep". Zostanie on usunięty automatycznie przed uploadem na gdrive.  
 - Odchudzić foldery ze wszystkich plików *.bin, *.exe etc. - w celu ułatwienia tego został stworzony [gitignore-generator](utility/gitignore-generator.sh) ([link do oficjalnego repo](https://github.com/Billypl/GitignoreGenerator)) do znalezienia w folderze [utility](utlility/). W celu zapoznania się z działaniem należy użyć flagi -h. Skrypt pozwala na szybkie generowanie .gitignore'ów łączących różne technologie. Tak wygenerowany .gitignore należy umieścić w **folderze projektu** (nie w głównym .gitignore repo), który jest wrzucany do paczki, aby uniknąć wrzucania niepotrzebnych plików. **W takim wypadku nie trzeba niczego usuwać ręcznie ze swojego dysku.**  
 - Folder **Stara Paczka** służy tylko na **NIEAKTUALNE** materiały (np. zmieniła się forma / prowadzący)  
+
+## Paczka Tutorial all-in-one
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+[![Watch the video](https://img.youtube.com/vi/tuTGdGo7trQ/maxresdefault.jpg)](https://youtu.be/tuTGdGo7trQ)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
 
 ## Użyte projekty
 - https://github.com/Billypl/GithubGDriveSync
