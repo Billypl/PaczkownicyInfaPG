@@ -1,0 +1,5 @@
+Tryton
+VLIW
+Branch predication
+RAID
+"Random" z ostatniego wyk³adu

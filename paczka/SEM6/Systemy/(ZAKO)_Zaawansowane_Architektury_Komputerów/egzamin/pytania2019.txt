@@ -1,0 +1,10 @@
+1. Do czego używany jest model Markowa w procesorach?
+2. Jaki typ wnioskowania jest wykorzystywany w ukrytych łańcuchach Markowa?
+3. Wymień 4 typy architektur komputera
+4. Jaki typ architektury mają sieci neuronowe?
+5. Narysuj model maszyny Turinga. Czemu we współczesnych procesorach odpowiada zbiór stanów?
+6. Wymień 3 etapy projektowania ARMa
+7. Wymień najważniejsze etapy tworzenia procesora. Który ma największy wpływ na jakość?
+8. Czym charakteryzują się procesory hybrydowe?
+9. Wymień dwie różnice między procesorami sekwencyjnymi i potokowymi
+10. Co to forwarding?
