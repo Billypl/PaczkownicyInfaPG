@@ -1,0 +1,7 @@
+1. Jakie zalety ma realizacja pamiêci wirtualnej za pomoc¹ stronicowania w porównaniu z realizacj¹ za pomoc¹ segmentacji?
+2. Ró¿nica wyznaczania adresu w trybie chronionym z PAE i bez.
+3. Omów proces uruchamiania komputera z EFI (od wciœniêcia przycisku zasilania do za³adowania bootloadera systemu operacyjnego maj¹c na uwadze przede wszystkim oprogramowanie i dane - nazwa i miejsce przechowywawnia).
+4. Omówiæ strukturê partycji rozszerzonej na dysku.
+5. Co to jest i jak¹ rolê pe³ni rekord plikowy NTFS?
+6. W katalogu g³ównym systemu FAT32 znajduje siê plik przyklad.txt, jak odczytamy 1 i 3 klaster(jednostkê alokacji) pliku?
+7. Opisaæ mechanizm segmentacji w Windows 7.
