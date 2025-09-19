@@ -10,25 +10,54 @@ def file_md5(path):
         return hashlib.md5(f.read()).hexdigest()
 
 def get_existing_files_recursive(folder_id, service):
-    query = f"'{folder_id}' in parents and trashed=false"
     files = {}
     folders = {}
-    checksums = {} 
-    
-    def recurse(current_id, path_prefix):
-        results = service.files().list(q=f"'{current_id}' in parents and trashed=false",
-                                       fields="files(id, name, mimeType, md5Checksum)").execute()
-        for item in results['files']:
-            full_path = os.path.join(path_prefix, item['name'])
-            if item['mimeType'] == 'application/vnd.google-apps.folder':
-                folders[full_path] = item['id']
-                recurse(item['id'], full_path)
-            else:
-                files[full_path] = item['id']
-                checksums[full_path] = item.get("md5Checksum")
+    checksums = {}
 
-    recurse(folder_id, "")
-    return {"files": files, "folders": folders, "checksums": checksums} 
+    page_token = None
+    all_items = []
+
+    while True:
+        results = service.files().list(
+            q=f"'{folder_id}' in parents or '{folder_id}' in ancestors and trashed=false",
+            fields="nextPageToken, files(id, name, mimeType, md5Checksum, parents)",
+            pageSize=1000,
+            pageToken=page_token
+        ).execute()
+
+        all_items.extend(results.get("files", []))
+        page_token = results.get("nextPageToken")
+        if not page_token:
+            break
+
+    # rekonstrukcja ścieżek
+    id_to_item = {item["id"]: item for item in all_items}
+    id_to_path = {}
+
+    def build_path(item_id):
+        if item_id in id_to_path:
+            return id_to_path[item_id]
+
+        item = id_to_item[item_id]
+        parent_ids = item.get("parents", [])
+        if not parent_ids or parent_ids[0] == folder_id:
+            path = item["name"]
+        else:
+            parent_path = build_path(parent_ids[0])
+            path = os.path.join(parent_path, item["name"])
+
+        id_to_path[item_id] = path
+        return path
+
+    for item in all_items:
+        full_path = build_path(item["id"])
+        if item["mimeType"] == "application/vnd.google-apps.folder":
+            folders[full_path] = item["id"]
+        else:
+            files[full_path] = item["id"]
+            checksums[full_path] = item.get("md5Checksum")
+
+    return {"files": files, "folders": folders, "checksums": checksums}
 
 def ensure_folder(path, parent_id, drive_service, existing_items):
     folders = existing_items["folders"]
