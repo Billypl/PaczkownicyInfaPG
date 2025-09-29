@@ -1,0 +1,97 @@
+//Klucznik, wynik 100%
+#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRTDBG_MAP_ALLOC 1
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+using namespace std;
+
+struct person {
+    char name[1001] = "";
+    int keys = 0;
+};
+
+struct room {
+    int number=-1;
+    person* key_owner = NULL;
+};
+
+void new_person(room* rooms, char* name, int roomIndex) {
+    person* p = new person;
+    strcpy(p->name, name);
+    if (rooms[roomIndex].key_owner == NULL) {
+        cout << "#\n";
+    }
+    else {
+        cout << rooms[roomIndex].key_owner->name << " " << rooms[roomIndex].key_owner->keys << endl;
+        rooms[roomIndex].key_owner->keys -= 1;
+        if (rooms[roomIndex].key_owner->keys <= 0) {
+            delete rooms[roomIndex].key_owner;
+        }
+    }
+    p->keys = 1;
+    rooms[roomIndex].key_owner = p;
+}
+
+void give_key(room* rooms, int roomsCount, int roomIndex, int roomNumber) {
+    room* r = NULL;
+    for (int i = 0; i < roomsCount; i++) {
+        if (rooms[i].number == roomNumber)
+            r = &rooms[i];
+    }
+    if (rooms[roomIndex].key_owner == NULL) {
+        cout << "#\n";
+        return;
+    }
+    if (r == NULL) {
+        cout << "!\n";
+        return;
+    }
+    if (r->key_owner != NULL) {
+        r->key_owner->keys -= 1;
+        if (r->key_owner->keys <= 0 && r->key_owner!= rooms[roomIndex].key_owner) {
+            delete r->key_owner;
+            r->key_owner = NULL;
+        }
+    }
+    rooms[roomIndex].key_owner->keys += 1;
+    r->key_owner = rooms[roomIndex].key_owner;
+    cout << rooms[roomIndex].key_owner->name << " " << rooms[roomIndex].key_owner->keys << endl;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    room* rooms = new room[n];
+    int x;
+    for (int i = 0; i < n; i++) {
+        cin >> x;
+        rooms[i].number = x;
+        rooms[i].key_owner = NULL;
+    }
+    char op = ' ';
+    char name[1001];
+    int arg1, arg2;
+    do {
+        cin >> op;
+        if (op == 'D') {
+            cin >> arg1 >> name;
+            new_person(rooms, name, arg1);
+        }
+        else if (op == 'B') {
+            cin >> arg1 >> arg2;
+            give_key(rooms, n, arg1, arg2);
+        }
+    } while (op != 'Q');
+    for (int i = 0; i < n; i++) {
+        if (rooms[i].key_owner != NULL) {
+            for(int j=i+1; j<n; j++)
+				if (rooms[j].key_owner == rooms[i].key_owner)
+					rooms[j].key_owner = NULL;
+            delete rooms[i].key_owner;
+        }
+    }
+    delete[] rooms;
+    //_CrtDumpMemoryLeaks();
+    return 0;
+}

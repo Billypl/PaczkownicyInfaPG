@@ -1,0 +1,26 @@
+PPADDL - Adding numbers
+
+Write a program that adds two integers in the range 0 to 10100. The result of addition should be an integer.
+Input
+
+In the first line there is given the number of t tests <= 10. In the next t lines there are given pairs of numbers with a whitespace between.
+Ouput
+
+For each test, write the sum of the numbers.
+
+Note: All numbers are written in the decimal position system.
+Example
+
+Input
+2
+43465 232312
+2837453275437549 3475347589373895744
+
+Output
+275777
+3478185042649333293
+
+Points
+
+There are 3 test cases: the first test is an example (1 pt), the second is restricted to the numbers <= 109 (1 pt), and the third one contains numbers <= 10100 (3 pts).
+

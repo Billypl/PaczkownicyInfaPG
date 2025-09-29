@@ -1,0 +1,32 @@
+PZPI06_1 - Kanonier Jaś
+
+Świeżo przyjęty do wojska Jaś trafił do I Batalionu Bajtlandzkiej Artylerii w stopniu kanoniera. Swój talent Jaś zademonstrował podczas Igrzysk Wojskowych w konkurencji: "Strzelanie do nieruchomego celu z ruchomej platformy".
+
+Zasady konkurencji są nastepujące: na ruchomej platformie poruszającej się po torach w lewym jej skrajnym punkcie znajduje się działo (o długości pomijalnie małej w stosunku do pozostałych wielkości), z którego mogą być wystrzeliwane pociski o masie 1 kg z prędkością 100 m/s <= u <= 500 m/s w kierunku 45o do osi ruchu platformy, ale nie częściej niż co 5 sekund - Jaś potrzebuje chwilę czasu, żeby ponownie załadować działo. Podczas zawracania platformy Jaś zajęty jest jej obsługą, wiec w tym momencie również nie może oddać strzału. Platforma porusza się ruchem jednostajnym z prędkością 1 m/s <= v <= 10 m/s, ruch rozpoczyna w punkcie najdalszym od celu. Zarówno platforma, jak i cel mają długość 10 m <= r <= 50 m. Po pokonaniu drogi 500 m <= p <= 1000 m platforma natychmiast zawraca i porusza się wzdłuż tego samego kierunku z tą samą prędkością, ale z przeciwnym zwrotem. Cel znajduje się w odlegości 1000 m <= q <= 20000 m od najbliższego do niego punktu, w którym znalazła się platforma.
+
+Zadaniem Jasia jest zlikwidować cel salwą 0 <= k <= 1000 oddanych celnych strzałów. Należy ustalić czy Jaś może zniszczyć cel, jeżeli tak, to w jakim momencie, najwcześniej, licząc od momentu startu ruchu platformy, cel przestanie istnieć.
+
+Przyjmiemy, że opory powietrza są pomijalne oraz, że pocisk porusza się w jednorodnym polu grawitacyjnym o natężeniu równym 9,81 m/s2.
+
+Wejście
+
+W pierszej linii znajduje się informacja o liczbie testów t <= 10. W pierwszej i jedynej linii każdego testu podane są wszystkie wymagane całkowite parametry w następującej kolejności: u v p q r k.
+Wyjście
+
+Odpowiedzi do kolejnych testów należy wypisać w kolejnych następujących bezpośrednio po sobie liniach. W przypadku, gdy cel nie może zostać zniszczony, należy wydrukować odpowiedź NIE. W przypadku, gdy Jaś może zniszczyć cel należy wydrukować odpowiedź TAK wraz z następującym po niej czasem, w którym cel ulegnie zniszczeniu (z dokładnością do dwóch miejsc po przecinku).
+Przykład
+
+Wejście:
+4
+300 10 1000 9000 50 2
+100 10 500 1000 20 1
+500 10 500 1000 20 1
+150 1 1000 2000 10 4
+
+Wyjście:
+TAK 87.57
+TAK 48.06
+NIE
+TAK 1263.58
+
+

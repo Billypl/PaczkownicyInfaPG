@@ -1,0 +1,37 @@
+PCPBSUBS - Sums of two subsequences with bounds
+
+You are given N integers in the input (negative, positive or 0's). Moreover, you are given two bounds, the upper bound U and the lower bound L. Please compute the sum of all positive integers lower than U and the sum of all negative integers greater than L.
+Input
+
+In the first line, you are given three numbers N, U and L, where 1<=N<=100, and U and L are upper and lower bound, respectively, with U >= L. In the following one line your are given N integers of value between -1000 and 1000.
+Output
+
+Two integers, with whitespace between them. The first integer is the sum of all positive integers from the input which are lower than U and the second integer is the sum of all negative integers from the input which are greater than L.
+Example 1
+
+Input:
+5 4 -2
+-2 2 3 -1 4
+
+Output:
+5 -1
+
+Example 2
+
+Input:
+6 5 -5
+0 3 4 -2 6 -10
+
+Output:
+7 -2
+
+Example 3
+
+Input:
+2 0 -1
+1 -1
+
+Output:
+0 0
+
+

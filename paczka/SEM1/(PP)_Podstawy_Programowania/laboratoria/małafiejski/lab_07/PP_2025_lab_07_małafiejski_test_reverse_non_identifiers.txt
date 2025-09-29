@@ -1,0 +1,29 @@
+PCPRNID - Reverse non-identifiers
+
+Write the program that reverses all the non-identifiers from a given line. Identifier is a sequence of characters from set 'a'-'z' or 'A'-'Z' or '0'-'9' or '_', starting from any letter or underline character ('_').
+Input
+
+There are given some number of data sets. Each data set is a line consisting from the sequence of some number of words, separated by spaces. A word is a sequence of any ASCII characters of code from 33 till 126, e.g., aqui28$-3q or _dat_. The second word is an identyfier, but the first one not. You may assume that each word is not longer than 10000000 characters.
+Output
+
+Rewrite the line but with the reversed non-identifiers.
+Example
+
+Input:
+Dato25 has 2 c-ats and 3   _dogs.   . 
+  
+ 
+op8ax _yu _yu67 great-job ax~no   identifier 
+ 
+Output:
+Dato25 has 2 sta-c and 3   .sgod_   . 
+  
+ 
+op8ax _yu _yu67 boj-taerg on~xa   identifier 
+ 
+
+Remark
+
+Please note that the judge is case sensitive, so you must rewrite all whitespaces and newlines as it is in the input.
+
+Please note that you may click on accepted and see the number of points. Accepted solutions are rewarded with 1, 2, 3, 4 or 5 points!!

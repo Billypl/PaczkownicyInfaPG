@@ -13,10 +13,11 @@ def get_existing_files_recursive(folder_id, service):
     query = f"'{folder_id}' in parents and trashed=false"
     files = {}
     folders = {}
-
+    checksums = {} 
+    
     def recurse(current_id, path_prefix):
         results = service.files().list(q=f"'{current_id}' in parents and trashed=false",
-                                       fields="files(id, name, mimeType)").execute()
+                                       fields="files(id, name, mimeType, md5Checksum)").execute()
         for item in results['files']:
             full_path = os.path.join(path_prefix, item['name'])
             if item['mimeType'] == 'application/vnd.google-apps.folder':
@@ -24,9 +25,10 @@ def get_existing_files_recursive(folder_id, service):
                 recurse(item['id'], full_path)
             else:
                 files[full_path] = item['id']
+                checksums[full_path] = item.get("md5Checksum")
 
     recurse(folder_id, "")
-    return {"files": files, "folders": folders}
+    return {"files": files, "folders": folders, "checksums": checksums} 
 
 def ensure_folder(path, parent_id, drive_service, existing_items):
     folders = existing_items["folders"]
@@ -68,9 +70,9 @@ def upload_file_or_folder(local_base_path, parent_drive_folder_id, drive_service
             # check for updates
             file_id = existing_items["files"].get(relative_path)
             if file_id:
-                drive_file = drive_service.files().get(fileId=file_id, fields="md5Checksum").execute()
+                drive_md5 = existing_items["checksums"].get(relative_path)
                 local_md5 = file_md5(local_path)
-                if drive_file.get("md5Checksum") == local_md5:
+                if drive_md5 == local_md5:
                     continue
                 else:
                     media = MediaFileUpload(str(local_path), resumable=True)
@@ -112,7 +114,7 @@ def delete_items_not_in_local(local_base_path, parent_drive_folder_id, drive_ser
             except HttpError as e:
                 print(f"Error when removing {remote_path}: {e}")
 
-    # Usuń foldery od najgłębszego
+    # delete folders starting from deepest one
     for remote_path in sorted(existing_items["folders"].keys(), key=lambda x: -x.count("/")):
         if remote_path not in local_folders:
             try:

@@ -1,0 +1,91 @@
+OOPRNID2 - Remove non-identifiers (OOP template)
+
+Write the program that removes all the non-identifiers from a given line but only in non-commented part of the line. Identifier is a sequence of characters from set 'a'-'z' or 'A'-'Z' or '0'-'9' or '_', starting from any letter or underline character ('_'). The comment in a line is C++ style, i.e., it starts with // (twice '/') and ends with the new line character ('\n'). Assume that each lines ends with the new line character.
+Input
+
+There are given some number of data sets. Each data set is a line consisting from the sequence of some number of words, separated by spaces. A word is a sequence of any ASCII characters of code from 33 till 126, e.g., aqui28$-3q or _dat_. The second word is an identifier, but the first one not.
+Output
+
+Start each line with ">", then rewrite the line but with removed non-identifiers which appeared in the non-commented part of each line.
+Example
+
+Input:
+Dato25 has 2 c-ats // and 3 _dogs.
+op8ax _yu! _yu-67 great//-job ax~no identifier
+
+Output:
+>Dato25 has   // and 3 _dogs.
+>op8ax   great//-job ax~no identifier
+
+Input:
+TO.  JEST/  TRUDNE?   POZ//:)
+
+Output:
+>       POZ//:)
+
+Remark
+
+There are 6 test cases worth 0,0,0,1,1,1 points, respectively. Three first test cases are unhidden. Please note that all judges are case sensitive (i.e., exact) judges. So, please remove non-identifers and leave all identifiers and whitespaces also.
+Template
+
+Please note that writing anything (even a new line or a whitespace) in any restricted part of the code will result an error.
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <set>
+#include <cctype>
+
+using namespace std;
+
+// return true if word is an identifier, otherwise return false
+bool isIdent(string word)
+{
+        int len=word.size();
+        bool isid=!isdigit(word[0]);
+        for(int j=0;j<len && isid;j++) if (!isalnum(word[j]) && word[j]!='_')  isid = false;
+        return isid;
+}
+
+class Scanner {
+private:
+        string line;
+        string comment;
+        string before_comment;
+        string result;
+        int comment_pos;
+public:
+        bool ReadLine(istream& in) { getline(in, line); return !in.eof(); }
+        void PrintLine(ostream& out) { out << line << endl; }
+        // identify the part within a comment, and the part which is before the comment
+        Scanner& SplitLine() {
+                comment_pos = line.find("//");
+                if (comment_pos >= 0) {
+                comment = line.substr(comment_pos);
+                before_comment=line.substr(0,comment_pos);
+                } // otherwise comment_pos = std::string::npos = -1
+                else { comment = ""; before_comment = line; }
+                return *this;
+        }
+        // transform the part "before_comment", in such a way that any non-identifier is removed,
+	// BUT the rest (including whitespaces) is left
+        Scanner& Transform()
+	// begin: part 1, You are allowed to change the code ONLY between the brackets {} below
+	{
+		return *this;
+	}
+	// end: part 1
+        void Print(ostream& out) { cout << ">" << result << comment << endl; }
+};
+
+int main()
+{
+        Scanner info;
+        while (info.ReadLine(cin))
+        {
+                info.SplitLine().Transform().Print(cout);
+        }
+
+}
+
+

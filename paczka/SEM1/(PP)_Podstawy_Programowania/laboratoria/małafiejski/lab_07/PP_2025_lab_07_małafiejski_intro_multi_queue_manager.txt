@@ -1,0 +1,115 @@
+ITPQUEM - Multi Queue Manager
+
+Write a program that realizes functionality of the management of many queues.
+
+Consider the following example scenario. Let us assume that office working hours are 9:00-17:00. There are many clients coming to the office to be served by the staff. Some clients are coming before 9:00 and some other clients are coming later. Each client (denoted by Ci) has its own predefined incoming time, defined as release time and denoted by Ri. Moreover, for the sake of simplicity, let us assume that each client has a predefined (expected) time of being served, defined as processing time and denoted by Pi. There are m service points in the office denoted by S1,...,Sm. Each incoming client is assigned to one of these service points with the earliest time of beeing ready to serve. To be precise, the management system uses the following First Fit algorithm: assign a new client (preserving the order from the input) to the service point with the earliest ready time if that client may be served before closing hour. If there are two such service points with the same earliest ready time, choose the one Si with the lower identifier i.
+
+Your goal is to perform the simulation of that management system and to write out the maximum number of clients that may be served in the office before closing hour and what is the finishing time of the last served client.
+
+Please note that some of the clients that came earlier may not be served due to the long processing time but the clients who will come later may be served.
+Input
+There is t test cases in the input. Each test case begins with one line containing the number of service points m and a number k representing closing hour of the office. Then, there are some number of lines representing incoming clients in the form: Ri Pi, and at the end of each test case (including the last one) there is an empty line, then next test case, and so on.
+
+t [1 <= number of test cases <= 100]
+m k [where 1 <= m <= 1000, and 0 <= k <= 10000]
+R1 P1 [P1 >= 0, and so on..]
+R2 P2 [R2 >= R1, and so on..]
+...
+[empty line]
+[second test case sequence of lines]
+...
+[last one test case sequence of lines]
+
+You may assume that each value representing time is non-negative and not greater than k. Please note that the text written in brackets [ ] is not a part of the input data.
+Output
+
+Write one line per each test case in the form num tim, where num is the maximum number of clients that may be served using proposed First Fit algorithm within the period of time [0,k], and tim is the finishing time of the last client beeing served within opening hours (so not greater than k).
+Example 1
+
+Input:
+1
+1 10
+0 2
+0 1
+0 1
+5 2
+8 1
+
+
+Output:
+5 9
+
+Example 2
+
+Input:
+2
+1 8
+0 2
+0 1
+0 1
+5 2
+8 1
+
+1 6
+0 2
+0 1
+0 1
+5 2
+8 1
+
+
+Output:
+4 7
+3 4
+
+Example 3
+
+Input:
+2
+5 6
+0 1
+0 2
+0 2
+1 2
+2 3
+2 1
+3 2
+3 2
+3 2
+4 2
+4 2
+4 2
+5 3
+5 1
+
+4 3
+0 1
+0 3
+0 2
+1 1
+1 3
+1 3
+1 1
+2 1
+
+Output:
+11 6
+6 3
+
+Test cases
+
+There are six categories of the input data:
+
+    Test cases 1, 2 and 3: (0 pt, available) three example inputs and outputs,
+
+    Test case 4: (1 pt, available), t = 10, m = 1 and 1 ≤ k ≤ 100
+
+    Test case 5: (1 pt, available), t = 10, 1 ≤ m ≤ 10, 1 ≤ k ≤ 100
+
+    Test case 6 and 7: (2 x 1 pt), t = 100, 1 ≤ m ≤ 10, 1 ≤ k ≤ 100
+
+    Test case 8: (1 pt), t = 100, 1 ≤ m ≤ 100, 1 ≤ k ≤ 1000
+
+    Test case 9: (1 pt), t = 100, 1 ≤ m ≤ 1000, 1 ≤ k ≤ 10000
+
+

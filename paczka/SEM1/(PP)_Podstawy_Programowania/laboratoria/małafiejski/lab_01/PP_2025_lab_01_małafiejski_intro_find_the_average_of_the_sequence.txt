@@ -1,0 +1,19 @@
+PCPASUM - Find the average of the sequence
+
+Write a program calculating the average value of the sequence of integers.
+Input
+
+In the first line, you are given one number n, where 1<=n<=1000, and in the following one line you are given n integers of value between -1000 and 1000.
+Output
+
+The average value of all integers from input represented as a floating point number with the precision limited to two decimal points.
+Example
+
+Input:
+3
+2 2 3
+
+Output:
+2.33
+
+

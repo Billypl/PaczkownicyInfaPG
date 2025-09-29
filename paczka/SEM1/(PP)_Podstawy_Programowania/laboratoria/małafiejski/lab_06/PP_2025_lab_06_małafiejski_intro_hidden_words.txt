@@ -1,0 +1,43 @@
+OOPHIWOD - Hidden Words
+
+For a given list of words, find in a given two dimensional array of letters, as many words from the given list as possible. The words may occur in a row or in a columnl, in any direction, but consist of consecutive letters in the array.
+Input
+
+In the first line there is a list of words, separated with a space and finished with a new line. Then, in the following lines (of at most 10 lines), there are words of equal length of at most 10 characters, forming an array of letters, in fact. For example:
+
+oh to jol ho lot
+john
+moto
+tolo
+
+The list is as follows:
+
+oh to jol ho lot
+
+and the array of the size 3 rows x 4 columns is as follows:
+
+j o h n
+m o t o
+t o l o
+
+Output
+
+Find all words in the given list (from the first line of the input) that you can find in the array as a sequence of consecutive letters written in any of the four directions:
+→, ←, ↑, ↓,
+
+and write them in the order they appear in the initial list.
+Example
+
+Input:
+oh to lot kol lok tol mol ho jol loj lol
+john
+moto
+tolo
+
+Output:
+oh to lot tol ho
+
+Remarks
+
+There are 5 test cases worth 0,1,1,1,1 points, given as follows: (1) as in the example, (2) and (3) arrays with the only one row, (4) and (5) arrays with minimum two rows.
+

@@ -1,0 +1,30 @@
+//Prosty kalkulator, wynik 100%
+#include <iostream>
+using namespace std;
+
+int main(){
+    int ops;
+    cin>>ops;
+    char op;
+    double n;
+    int k;
+    double r;
+    for (int i = 0; i < ops; i++)
+    {
+        cin>>op>>k;
+        if(op=='*')
+            r=1;
+        else
+            r=0;
+        for (int j = 0; j < k; j++)
+        {
+            cin>>n;
+            if(op=='+')
+                r+=n;
+            else
+                r*=n;
+        }
+        cout<<r<<endl;
+    }
+    return 0;
+}

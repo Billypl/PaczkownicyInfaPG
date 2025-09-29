@@ -1,0 +1,63 @@
+//Liczby, wynik 100%
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[1000]={};
+    int size;
+    cin>>size;
+    for (int i = 0; i < size; i++)
+    {
+        cin>>arr[i];
+    }
+    int ops;
+    cin>>ops;
+    char op;
+    int arg1, arg2;
+    while(ops--){
+        cin>>op;
+        if(op=='c'){
+            cin>>arg1>>arg2;
+            int chg=0;
+            for (int i = 0; i < size; i++)
+            {
+                if(arr[i]==arg1){
+                    arr[i]=arg2;
+                    chg++;
+                }
+            }
+            cout<<chg<<endl;
+        }
+        else if(op=='s'){
+            cin>>arg1;
+            int sum=0;
+            for(int i=0; i<size; i++){
+                sum+=arr[i];
+                if((i+1)%arg1==0){
+                    cout<<sum<<" ";
+                    sum=0;
+                }
+            }
+            if(size%arg1!=0)
+                cout<<sum<<endl;
+        }
+        else if(op=='m'){
+            int mini=2147483647;
+            cin>>arg1>>arg2;
+            if((arg1<1&&arg2<1)||(arg1>size&&arg2>size)||(arg1>arg2)){
+                cout<<"#\n";
+                continue;
+            }
+            if(arg1<1)
+                arg1=1;
+            if(arg2>size)
+                arg2=size;
+            for (int i = arg1-1; i <= arg2-1; i++)
+            {
+                if(arr[i]<mini)
+                    mini=arr[i];
+            }
+            cout<<mini<<endl;
+        }
+    }    
+}

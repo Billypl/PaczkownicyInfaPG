@@ -1,0 +1,115 @@
+PCPFRSEQ - Most frequent name (template)
+
+Find the average age of all persons with the most frequent name. If there are a few names that are the most frequent (i.e., with the same number of occurences), calculate separately the average age of all persons with a given name, and write the results in separate lines.
+Input
+
+There are given at most 1000 records, where each record is written in a separate line ending with newline character (even after the last line). Each record consists of a name (of length at most 25 characters) and age (the integer between 0 and 150), separated by whitespace and ending with a newline character.
+Output
+
+In each line write the name and the average age (represented as a floating point number with the precision limited to two decimal points) for each most frequent name. If there are two or more most frequent names, write names in the lexicographical order, e.g., Anna before Gilbert, as in the example below.
+Examples
+
+Input:
+Gilbert 35
+Anna 35
+Anna 15
+Gilbert 20
+Joseph 40
+
+Output:
+Anna 25.00
+Gilbert 27.50
+
+Remark
+
+There are 6 test cases. First two of them, you may see in case of wrong answer, and the rest four test cases are hidden. Points for test cases: 0.5,0.5,1,1,1,1. Altogether you may get 5 points for this problem.
+
+
+HINT: You MAY use the following template
+
+#include <stdio.h>
+#include <string.h>
+
+struct PERSON {
+	char name[25];
+	int age;
+};
+
+int Read(struct PERSON* tab)
+{
+	int i;
+	for(i=0; scanf("%s %d",&tab[i].name,&tab[i].age)==2;i++);
+	return i;
+}
+
+void Print(struct PERSON* tab, int size, int freq)
+{
+	int i,j;
+	double avg=0;
+	char cname[25];
+	strcpy(cname,tab[0].name);
+	for(i=0,j=0;i<size;)
+	{
+		while (strcmp(cname,tab[i].name)==0 && (i<size))
+		{
+			avg+=tab[i].age;
+			i++; j++;
+		}
+		avg/=j;
+		if (j==freq) printf("%s %.2f\n",cname,avg);
+		j=0; avg=0;
+		if (i<size) strcpy(cname,tab[i].name);
+	}
+}
+
+void Sort(struct PERSON* tab, int size)
+{
+        int i, temp, ub;
+	char tc[25];
+
+        for(ub=size-1;ub>=1;ub--) 	/* Sorting algorithm */
+        	for(i=1;i<=ub;i++)
+		{
+        		if (strcmp(tab[i-1].name,tab[i].name)>0)
+			{ /* swap tab[i-1] and tab[i] */
+				temp=tab[i].age;
+				strcpy(tc,tab[i].name);
+
+				tab[i].age=tab[i-1].age;
+				strcpy(tab[i].name,tab[i-1].name);
+
+				tab[i-1].age=temp;
+				strcpy(tab[i-1].name,tc);
+			}
+		}
+
+}
+
+int MostFreq(struct PERSON* tab, int size)
+{ 
+	int max;
+
+	/* you may put your solution here only */
+	
+	return max;
+}
+
+int main()
+{
+	int i,size,freq;
+
+	struct PERSON P[1000];
+
+	size=Read(P); /* number of records */
+
+	Sort(P,size); /* sorted by names */
+
+	 /* the number of the occurences of the most frequent name */
+	freq=MostFreq(P,size);
+
+	Print(P,size,freq);
+
+	return 0;
+}
+
+

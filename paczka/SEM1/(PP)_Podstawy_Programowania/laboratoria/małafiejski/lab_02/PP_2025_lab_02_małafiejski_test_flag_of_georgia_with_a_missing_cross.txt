@@ -1,0 +1,64 @@
+PCPGFLAG2 - Flag of Georgia with a missing cross
+
+Write a flag of Georgia with stars to the output. But be careful, there is missing one small cross! In the input there are two numbers k, 1<=k<=20 and s, 1<=s<=4. The flag is within a square of size n x n, where n=4*k+14, but with a missing a small cross in the field denoted by s, where the fields are numbered as follows:
+
+*********
+* 1 * 2 *
+*********
+* 3 * 4 *
+*********
+
+In the following there is an example for k equal to 1 and 2, and different s.
+Example
+
+Input:
+1 1
+
+Output:
+******************
+*       **       *
+*       **       *
+*       **   *   *
+*       **  ***  *
+*       **   *   *
+*       **       *
+*       **       *
+******************
+******************
+*       **       *
+*       **       *
+*   *   **   *   *
+*  ***  **  ***  *
+*   *   **   *   *
+*       **       *
+*       **       *
+******************
+
+Input:
+2 4
+
+Output:
+**********************
+*         **         *
+*         **         *
+*         **         *
+*    *    **    *    *
+*   ***   **   ***   *
+*    *    **    *    *
+*         **         *
+*         **         *
+*         **         *
+**********************
+**********************
+*         **         *
+*         **         *
+*         **         *
+*    *    **         *
+*   ***   **         *
+*    *    **         *
+*         **         *
+*         **         *
+*         **         *
+**********************
+
+

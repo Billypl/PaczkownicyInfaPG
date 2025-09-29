@@ -22,6 +22,8 @@
 
 - [GitHub](https://github.com) - niezawodne narzędzie do wersjonowania kodu, pozwala uniknąć zestawu kopii folderów "projekt", "projekt1", "projekt3", "projekt3.5", "projekt_final", "projekt_final_final"...
 
+- [md2pdf](https://md-to-pdf.fly.dev/) - markdown to pdf converter, jeden z lepszych outputów z darmowych narzędzi
+
 ## Self hosted
 
 - [SpliitApp](https://spliit.app/groups/Z6arwR0-d7Vja3Zxj92Ib/expenses?ref=share) - apka open sourceowa do dzielenia rachunków ze znajomymi za darmo

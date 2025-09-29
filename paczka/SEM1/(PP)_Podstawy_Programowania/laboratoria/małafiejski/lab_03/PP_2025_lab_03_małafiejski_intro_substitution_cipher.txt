@@ -1,0 +1,39 @@
+PCPCRYPTO1 - Substitution cipher
+
+Write a program that encrypts the text from the input by using an easy substitution method. The only allowed characters in input are letters 'A'-'Z', whitespace and a newline character. What is a substitution method using ciphertext alphabet? It is easy, let us follow the example:
+
+Standard English alphabet:	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Ciphertext alphabet:		ZEBRASCDFGHIJKLMNOPQTUVWXY
+
+Text to be encrypted:
+BEST
+UNIVERSITY FOR YOU
+
+We replace each letter from the input text with the appropriate
+letter from ciphertext, e.g., A is replaced with Z, B is replaced
+with E, C is replaced with B, and, e.g.,  M is replaced ith J, etc.
+Thus, we get:
+EAPQ
+TKFUAOPFQX SLO XLT
+
+Input
+
+Input consists of two parts, in the first line there is a ciphertext, that is a string of length 26 consisting of non-repeating letters 'A','B',...,'Z' (English 26 letters), in some order. In the second part of the input, i.e., in the successive lines, there is a text consisting of letters ('A'-'Z'), whitespace and a newline character.
+Output
+
+You have to print enciphered input text, as follows: each letter from input substitute with the appropriate letter from the ciphertext, leaving whitespaces and newline characters.
+Example
+
+Input:
+ZEBRASCDFGHIJKLMNOPQTUVWXY
+FLEE AT ONCE WE ARE DISCOVERED
+FLEE AT ONCE WE ARE DISCOVERED
+
+Output:
+SIAA ZQ LKBA VA ZOA RFPBLUAOAR
+SIAA ZQ LKBA VA ZOA RFPBLUAOAR
+
+Remark
+
+There are 6 test cases. First two of them, you may see in case of wrong answer, and the rest four test cases are hidden. Points for test cases: 0,0,0.5,0.5,0.5,0.5. Altogether you may get 2 points for this problem.
+

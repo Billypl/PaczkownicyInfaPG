@@ -1,0 +1,22 @@
+ITPMFLET - Most frequent letter
+
+You are given the sequence of words consisting of letters (a-z,A-Z) only, each word in a separate line. Your goal is to write to the output the number of occurrences of the most frequent small letter in all the words of even length and the number of occurrences of the most frequent capital letter in all the words of odd length.
+Input
+
+At most 1000 words composed from the letters only (a-z,A-Z) written in separate lines. Each word is of length at most 100 characters.
+Output
+
+In one line write down two numbers: the number of occurrences of the most frequent small letter in all the words of even length and the number of occurrences of the most frequent capital letter in all the words of odd length.
+Example
+
+Input:
+JoHn
+BRuNo
+KAMiL
+ANna
+MAGDA
+
+Output:
+2 3
+
+

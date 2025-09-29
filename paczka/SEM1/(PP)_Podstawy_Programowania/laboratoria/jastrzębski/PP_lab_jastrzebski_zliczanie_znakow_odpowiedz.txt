@@ -1,0 +1,19 @@
+//Zliczanie znaków, wynik 100%
+#include <iostream>
+using namespace std;
+
+int licz_znak(const char* napis, const char znak){
+    if(*napis=='\0')
+        return 0;
+    if(*napis==znak)
+        return 1+licz_znak(napis+1, znak);
+    else
+        return licz_znak(napis+1, znak);
+}
+
+int main(){
+    const char* napis="piotr tymoteusz trybisz";
+    const char znak='t';
+    cout<<licz_znak(napis,znak);
+    return 0;
+}

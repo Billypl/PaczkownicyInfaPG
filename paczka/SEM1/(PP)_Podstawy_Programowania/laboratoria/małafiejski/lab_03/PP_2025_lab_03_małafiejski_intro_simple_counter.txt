@@ -1,0 +1,24 @@
+SPSCOUNT - Simple Counter
+
+Write the program that counts the number of lines, words and characters of a given text.
+Input
+
+Text provided in the input is a sequence of lines. Each line consists of a sequence of whitespaces, words and dots, with a newline at the end. Word is a sequence of letters (a-zA-Z).
+Output
+
+The number of lines, words and characters.
+Examples
+
+Input:
+It is the first line.
+Second line... oh..no..no no
+Output:
+2 11 51
+
+Input:
+The boy stood on the burning deck
+shelling peanuts by the peck
+Output:
+2 12 63
+
+

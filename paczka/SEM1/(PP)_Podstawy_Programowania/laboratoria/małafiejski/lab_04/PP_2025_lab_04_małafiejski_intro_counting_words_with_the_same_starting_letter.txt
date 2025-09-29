@@ -1,0 +1,31 @@
+OOPCNW2 - Counting words with the same starting letter
+
+Write the program that counts how many words are starting with the same letter in the whole text from the input.
+Input
+
+There is given a text in the input which may consist of many lines (even empty lines). The text may contain words with capital or small letters and interpunctions signs. No two interpunction signs are together in one word. There may be words with the only one character which is an interpunction sign.
+Output
+
+The list of letters 'a'-'z' with the statistic of words beginning with the letter. Uppercase and lowercase letters are indistinguishable. Sort the list accoding to the letters (increasing order). Write the statistic only for letters having at least one word starting with that letter.
+Example
+
+Input:
+
+And you shall find his vanities forespent  ?
+Were but the outside of the Roman Brutus,
+
+Output:
+
+a 1
+b 2
+f 2
+h 1
+o 2
+r 1
+s 1
+t 2
+v 1
+w 1
+y 1
+
+

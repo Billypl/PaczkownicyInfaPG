@@ -1,0 +1,50 @@
+//Obrazek 1, wynik 80%
+#include <iostream>
+using namespace std;
+
+bool t[999][999];
+
+void kafelek(int x, int y, int n){
+    for (int i = 0; i < n/2; i++)
+    {
+        for(int j = 0; j<n/2-i; j++){
+            t[x+i][y+j]=1;
+        }
+        for(int j = n-1; j>=n-(n/2-i); j--){
+            t[x+i][y+j]=1;
+        }
+    }
+    for (int i = n-1; i >= n-(n/2); i--)
+    {
+        for(int j = 0; j<n/2-(n-i)+1; j++){
+            t[x+i][y+j]=1;
+        }
+        for(int j = n-1; j>=n-(n/2-(n-i))-1; j--){
+            t[x+i][y+j]=1;
+        }
+    }
+}
+
+int main(){
+    int n;
+    int v, h;
+    char w, z;
+    cin>>n>>v>>h>>w>>z;
+    
+    for(int i = 0; i<v*n; i+=n){
+        for(int j=0; j<h*n; j+=n){
+            kafelek(i,j,n);
+        }
+    }
+    for(int row=0; row<v*n; row++){
+        for (int col = 0; col < h*n; col++)
+        {
+            if(t[row][col])
+                cout<<z;
+            else
+                cout<<w;
+        }
+        cout<<endl;
+    }
+    return 0;
+}

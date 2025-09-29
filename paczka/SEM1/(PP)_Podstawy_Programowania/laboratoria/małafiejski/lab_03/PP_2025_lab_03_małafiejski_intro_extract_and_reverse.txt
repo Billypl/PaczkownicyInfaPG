@@ -1,0 +1,25 @@
+OOPRSLET - Extract and reverse
+
+You are given N words in the input, each word in the separate line. Words are sequences of small and capital letters. You have to convert all words, line by line, as follows: extract the subsequence of small letters from the original word, reverse it and put the reversed word into the original word, preserving the positions of letters.
+
+Let us follow the example word: aLObagTARx. The subsequence with small letters is: abagx, and reversed is xgaba. Now put it in the original word: xLOgabTARa.
+Input
+
+In the first line, you are given number N, where 1<=N<=100. In the following N lines your are given N words, each word in the separate line.
+Output
+
+N lines with converted words.
+Example
+
+Input:
+3
+aLObagTARx
+GRgameEAT
+FATegg
+
+Output:
+xLOgabTARa
+GRemagEAT
+FATgge
+
+

@@ -1,0 +1,24 @@
+ITPCPTS - Closest Pair of Points
+
+Write the program that finds the square of minimum Euclidean distance between two points among n points on the plane. See Wikipedia: https://en.wikipedia.org/wiki/Euclidean_distance.
+Input
+
+In the first line there is a number 2 <= n <= 30000. In each of n next lines there are two integers from [-1000000,1000000] denoting coordinates of a point.
+Output
+
+Print a square of the distance between closest two points.
+Examples
+
+Input:
+5
+1 1
+2 2
+3 3
+0 2
+2 0
+Output:
+2
+
+Note
+There are given three test cases. Two first test cases are worth 1 point each and the third test case is worth 3 points.
+

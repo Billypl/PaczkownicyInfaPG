@@ -1,0 +1,26 @@
+OOPMFW1 - Most frequent even word
+
+You are given the sequence of words consisting of letters (a-z,A-Z) only, each word in a separate line. Your goal is to write to the output the number of occurrences of the most frequent word of even length. You may assume that each word is of length at most 1000.
+Input
+
+At most 1000 words composed from the letters only (a-z,A-Z) written in separate lines.
+Output
+
+Write down the number of occurrences of the most frequent word of even length.
+Example
+
+Input:
+five
+one
+four
+two
+five
+three
+four
+five
+four
+five
+Output:
+4
+
+

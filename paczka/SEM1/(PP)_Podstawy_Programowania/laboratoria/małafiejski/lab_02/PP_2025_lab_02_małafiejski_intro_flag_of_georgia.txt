@@ -1,0 +1,56 @@
+PCPGFLAG - Flag of Georgia
+
+Write a flag of Georgia with stars to the output. In the input there is a number k, 1<=k<=14. The flag is within a square of size n x n, where n=4*k+14. In the following there is an example for k equal to 1 and 2.
+Example
+
+Input:
+1
+
+Output:
+******************
+*       **       *
+*       **       *
+*   *   **   *   *
+*  ***  **  ***  *
+*   *   **   *   *
+*       **       *
+*       **       *
+******************
+******************
+*       **       *
+*       **       *
+*   *   **   *   *
+*  ***  **  ***  *
+*   *   **   *   *
+*       **       *
+*       **       *
+******************
+
+Input:
+2
+
+Output:
+**********************
+*         **         *
+*         **         *
+*         **         *
+*    *    **    *    *
+*   ***   **   ***   *
+*    *    **    *    *
+*         **         *
+*         **         *
+*         **         *
+**********************
+**********************
+*         **         *
+*         **         *
+*         **         *
+*    *    **    *    *
+*   ***   **   ***   *
+*    *    **    *    *
+*         **         *
+*         **         *
+*         **         *
+**********************
+
+

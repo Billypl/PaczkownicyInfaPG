@@ -1,0 +1,17 @@
+PCP2NUM - Add two numbers
+
+Write the program that performs adding of two integer numbers.
+Input
+
+Two numbers written in one line and separated by the whitespace.
+Output
+
+Sum of two numbers.
+Example
+
+Input:
+2 5
+Output:
+7
+
+

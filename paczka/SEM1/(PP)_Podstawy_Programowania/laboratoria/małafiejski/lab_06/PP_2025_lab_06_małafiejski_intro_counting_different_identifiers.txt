@@ -1,0 +1,24 @@
+OOPCDID - Counting different identifiers
+
+Write the program that counts how many different identifiers are in a given line. Identifier is a sequence of characters from set 'a'-'z' or 'A'-'Z' or '0'-'9' or '_', starting from any letter or underline character ('_').
+Input
+
+There are given some number of data sets. Each data set is a line consisting from the sequence of some number of words, separated by spaces. A word is a sequence of any ASCII character of code from 33 till 126 (see http://www.asciitable.com for more details), e.g., aqui28$-3q or _dat_. The second word is an identyfier, but the first one not.
+
+Remark: Input size of one test case is less than 5 MB.
+Output
+
+The number of identifiers in each line.
+Example
+
+Input:
+Dato25 has 2 c-ats and has 3 _dogs
+op8ax _yu _yu67 great-job ax~no _yu identifier.
+
+ 
+
+Output:
+4
+3
+
+

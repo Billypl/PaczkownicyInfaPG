@@ -1,0 +1,28 @@
+PCP2SUBS - Sums of two subsequences
+
+You are given n integers in the input (negative, positive or 0's). Please compute the sum of all positive integers and the sum of all negative integers.
+Input
+
+In the first line, you are given one number n, where 1<=n<=100, and in the following one line you are given n integers of value between -1000 and 1000.
+Output
+
+Two integers, with whitespace between them. The first integer is the sum of all positive integers from the input and the second one is the sum of all negative integers from the input.
+Example 1
+
+Input:
+5
+-2 2 3 -1 4
+
+Output:
+9 -3
+
+Example 2
+
+Input:
+6
+0 3 4 -2 6 -10
+
+Output:
+13 -12
+
+

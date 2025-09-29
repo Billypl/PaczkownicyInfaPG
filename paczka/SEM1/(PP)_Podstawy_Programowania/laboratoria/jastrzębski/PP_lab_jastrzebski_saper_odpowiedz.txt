@@ -1,0 +1,60 @@
+//Saper, wynik 100%
+#include <iostream>
+using namespace std;
+
+void change(char arr[10][10]){
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            if(arr[i][j]=='*')
+                continue;
+            char mines='0';
+            if(i>0){
+                if(j>0)
+                    mines+=arr[i-1][j-1]=='*';
+                mines+=arr[i-1][j]=='*';
+                if(j<9)
+                    mines+=arr[i-1][j+1]=='*';
+            }
+            if(j>0)
+                mines+=arr[i][j-1]=='*';
+            if(j<9)
+                mines+=arr[i][j+1]=='*';
+            if(i<9){
+                if(j>0)
+                    mines+=arr[i+1][j-1]=='*';
+                mines+=arr[i+1][j]=='*';
+                if(j<9)
+                    mines+=arr[i+1][j+1]=='*';
+            }
+            arr[i][j]=mines;
+        }
+        
+    }
+    
+}
+
+void print(const char arr[10][10]){
+    for(int i = 0; i<10; i++){
+        for (int j = 0; j < 10; j++)
+        {
+            cout<<arr[i][j];
+        }
+        cout<<endl;
+    }
+}
+
+int main(){
+    char arr[10][11];
+    for (int i = 0; i < 10; i++)
+    {
+        cin>>arr[i];
+    }
+    char newArr[10][10];
+    for(int i = 0; i<10; i++)
+        memcpy(newArr[i],arr[i],10);
+    change(newArr);
+    print(newArr);
+    return 0;
+}

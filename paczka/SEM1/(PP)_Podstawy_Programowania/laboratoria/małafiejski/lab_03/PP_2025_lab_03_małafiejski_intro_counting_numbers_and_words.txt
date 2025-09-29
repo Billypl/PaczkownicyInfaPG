@@ -1,0 +1,22 @@
+OOPCNW - Counting numbers and words
+
+Write the program that counts how many words and numbers are in a given line.
+Input
+
+There are given at most 1000 data sets. Each data set consists from the numbers and words (letters 'a'-'z' and 'A'-'Z') separated by spaces.
+Output
+
+The number of numbers and words in each line.
+Example
+
+Input:
+Dato has 2 cats and 3 dogs
+2 plus 2 is equal to 4
+
+ 
+
+Output:
+2 5
+3 4
+
+

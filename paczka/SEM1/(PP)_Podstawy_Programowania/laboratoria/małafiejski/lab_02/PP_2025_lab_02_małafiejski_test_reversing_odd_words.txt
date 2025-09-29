@@ -1,0 +1,55 @@
+ITPREVO - Reversing odd words
+
+Write the program that reads the words from the input and rewrites first all words of even length preserving the order from the input, then writes all reversed words of odd length, also preserving the order from the input. Each word from the input is finished with a newline '\n' character.
+Input
+
+At most 1000 words composed from the small letters only written in separate lines. Each word is of length at most 100 characters.
+Output
+First, rewrite in separate lines all words of even length preserving the order from the input. Then, write in separate lines all reversed words of odd length, also preserving the order from the input.
+Example 1
+
+Input:
+
+nuli
+erti
+ori
+sami
+ors
+
+Output:
+
+nuli
+erti
+sami
+iro
+sro
+
+Example 1
+
+Input:
+
+nikoloz
+albert
+kakhi
+aleko
+sandro
+giorgi
+mariam
+shalva
+mate
+guram
+
+Output:
+
+albert
+sandro
+giorgi
+mariam
+shalva
+mate
+zolokin
+ihkak
+okela
+marug
+
+

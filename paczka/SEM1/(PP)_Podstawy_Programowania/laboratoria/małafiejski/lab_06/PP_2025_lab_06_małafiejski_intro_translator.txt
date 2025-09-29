@@ -1,0 +1,27 @@
+OOPTRANS - Translator
+
+Write the program that translates (word by word) the given text between two languages.
+Input
+
+There are given a vocabulary and text to be translated as a sequence of words (small letters only), newlines and interpunctions signs (,.:;?!). The vocabulary consists of pairs of words w[space]t[newline], where w is the word in the first language, and t is its translation to the second language. Between the vocabulary and the text is exactly one empty line. You may assume that each word is of length of at most 20 characters and the size of vocabulary (i.e., the number of pairs) is at most 5000.
+Output
+
+Translated text. You have to translate only words from the vocabulary. All the other content must be rewrited as it is.
+Example
+
+Input:
+
+zdanie sentence
+jest is
+bardzo very
+
+to jest bardzo easy zdanie.
+zdanie jest? long;
+zdanie jest short!
+
+Output:
+
+to is very easy sentence.
+sentence is? long;
+sentence is short!
+

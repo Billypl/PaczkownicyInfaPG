@@ -1,0 +1,29 @@
+OOPRNID3 - Remove non-identifiers (exact)
+
+Write the program that removes all the non-identifiers from a given line but only in non-commented part of the line. Identifier is a sequence of characters from set 'a'-'z' or 'A'-'Z' or '0'-'9' or '_', starting from any letter or underline character ('_'). The comment in a line is C++ style, i.e., it starts with // (twice '/') and ends with the new line character ('\n'). Assume that each lines ends with the new line character.
+Input
+
+There are given some number of data sets. Each data set is a line consisting from the sequence of some number of words, separated by spaces. A word is a sequence of any ASCII characters of code from 33 till 126, e.g., aqui28$-3q or _dat_. The second word is an identifier, but the first one not.
+Output
+
+Start each line with ">", then rewrite the line but with removed non-identifiers which appeared in the non-commented part of each line.
+Example
+
+Input:
+Dato25 has 2 c-ats // and 3 _dogs.
+op8ax _yu! _yu-67 great//-job ax~no identifier
+
+Output:
+>Dato25 has   // and 3 _dogs.
+>op8ax   great//-job ax~no identifier
+
+Input:
+TO.  JEST/  TRUDNE?   POZ//:)
+
+Output:
+>       POZ//:)
+
+Remark
+
+There are 6 test cases worth 1,1,1,2,2,3 points, respectively. Three first test cases are unhidden. Please note that all judges are case sensitive (i.e., exact) judges. So, please remove non-identifers and leave all identifiers and whitespaces also.
+

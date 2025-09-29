@@ -1,0 +1,26 @@
+OOPREVERS - Reversing words
+
+Write the program that reads the words from the input and writes each word in the reverse manner. Each word is finished with a newline '\n' character.
+Input
+
+At most 1000 words composed from the small letters only written in separate lines.
+Output
+
+Words from the input written in the reversed order and in the separate lines.
+Example
+
+Input:
+nuli
+erti
+ori
+sami
+
+ 
+
+Wyjście:
+ilun
+itre
+iro
+imas
+
+

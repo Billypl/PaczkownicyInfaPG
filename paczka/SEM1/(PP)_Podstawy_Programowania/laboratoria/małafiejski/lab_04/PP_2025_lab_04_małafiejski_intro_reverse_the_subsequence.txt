@@ -1,0 +1,36 @@
+PCPRSUBS - Reverse the subsequence
+
+You are given N integers in the input. Moreover, you are given two bounds, the upper bound U and the lower bound L, where L<=U. You have to find all the elements of values between L and U from the original sequence and to reverse its order in the original sequence.
+
+Let us follow the example of the initial sequence of 10 integers, and let us assume that the lower and the upper bound is 7 and 20, respectively. The subsequence of integers of values from 7 to 20 is bold.
+
+5 18 2 7 10 2 20 20 0 9 
+
+The subsequence is as follows:
+
+18 7 10 20 20 9
+
+Now, reverse its order:
+
+9 20 20 10 7 18
+
+and put the reversed subsequence into the original input sequence:
+
+5 9 2 20 20 2 10 7 0 18
+
+Input
+
+In the first line, you are given three numbers N, L and U, where 1<=N<=100, and U and U are lower and upper bound, respectively, with L <= U. In the following one line your are given N integers of value between -1000 and 1000.
+Output
+
+The sequence consisting of all the integers from the input but with the reversed subsequence of all integers of values from L to U.
+Example 1
+
+Input:
+5 -2 3
+-2 4 3 -1 4
+
+Output:
+-1 4 3 -2 4
+
+

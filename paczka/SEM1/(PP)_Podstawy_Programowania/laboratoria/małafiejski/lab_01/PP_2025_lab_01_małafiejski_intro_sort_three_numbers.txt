@@ -1,0 +1,21 @@
+OOP3SORT - Sort three numbers
+
+Write the program that sorts three numbers.
+Input
+
+There are given three integer numbers, each number in the separate line. One may assume that all the numbers are between -1000000 and 1000000.
+Output
+
+Write three numbers from the input in the non-decreasing order. Each number must be in the separate line.
+Example
+
+Input:
+    105
+    -68
+    12
+
+Output:
+    -68
+    12
+    105
+

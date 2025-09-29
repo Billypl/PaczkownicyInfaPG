@@ -1,0 +1,31 @@
+PCPSWAPM - Swapping min and max
+
+You are given the sequence of integers in the input. Swap all min and max values in that sequence.
+Input
+
+In the first line, you are given one number N, where 1<=N<=100. In the following one line your are given N integers of value between -1000 and 1000.
+Output
+
+Rewrite the sequence from the input but replace each minimum value with the maximum one, and vice versa.
+Example 1
+
+Input:
+5
+0 8 5 8 0
+
+Output:
+8 0 5 0 8
+
+Example 2
+
+Input:
+6
+-10 5 2 10 -10 3
+
+Output:
+10 5 2 -10 10 3
+
+Remark
+
+There are four datasets, i.e., input & output. Two of them are visible for you to compare the model and your output, and two of them are hidden.
+

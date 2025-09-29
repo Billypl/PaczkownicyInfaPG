@@ -1,0 +1,29 @@
+OOP2CALC - Roman calculations (academy)
+
+Write the program that calculates the sum, difference, multiplication and the division of two roman numbers.
+Input
+
+There are at most 10000 test cases in the input in separate lines. Each test case is of the form:
+a op b
+
+where a and b are roman numbers from the range 1 to 3999, and op is one of the math operations: +, -, * or /. There are whitespace between the operators and the numbers.
+Output
+
+Calculate the result of the operation given in the input, which should be written as a roman number. If the result is negative or is greater than 3999 than write - as the answer. Each calculated result should be in the separate line.
+Example
+
+Input:
+
+MMCC + MMC
+MMXX - MMMII
+CX * III
+CDX / LI
+
+Output:
+
+-
+-
+CCCXXX
+VIII
+
+

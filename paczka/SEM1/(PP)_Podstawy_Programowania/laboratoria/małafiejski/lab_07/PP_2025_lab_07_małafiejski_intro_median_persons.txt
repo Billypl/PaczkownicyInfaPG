@@ -1,0 +1,76 @@
+PCPMESEQ - Median Person(s)
+
+Find the person(s) with a median age in a data set of no more than 1000 records. Each record consists of the name and age of a person.
+
+Median number of a sequence of numbers is the value separating the higher half from the lower half of a that sequence, e.g., median of 9 3 6 8 7 3 1 is 6, since after sorting them we get 1 3 3 6 7 8 9. Another situation is for the sequence of even length, e.g., for 6 3 2 9 5 1 8 4, the median is 4.5, since after sorting we get 1 2 3 4 5 6 8 9, and median is the average of 4 and 5. More information you may find here.
+
+A median person (in case of odd number of records) or median persons, precisely two persons (in case of even number of records) for a set of records, we may find as follows. Sort all the records in a non-decreasing order by an age and in the case of the same age, sort the persons with the same age in a lexicographical order by names. You may assume that there are no two persons with the same name and age. Follow the example.
+
+Gilbert 35
+Anna 35
+Anna 15
+Mary 15
+Joseph 40
+
+After sorting (with the above rules) we get the following sequence.
+
+Anna 15
+Mary 15
+Anna 35
+Gilbert 35
+Joseph 40
+
+So your answer should be Anna 35. In case of even number of records, you have to write to the output two records. Follow the example.
+
+Gilbert 35
+Anna 35
+Andrew 35
+Anna 15
+Mary 15
+Joseph 40
+
+After sorting (with the above rules) we get the following sequence.
+
+Anna 15
+Mary 15
+Andrew 35
+Anna 35
+Gilbert 35
+Joseph 40
+
+So your answer should be both, Andrew and Anna, as follows:
+
+Andrew 35
+Anna 35
+
+Input
+
+There are given at most 1000 records, where each record is written in a separate line ending with newline character (even after the last line). Each record consists of a name (of length at most 25 characters) and age (the integer between 0 and 150), separated by whitespace and ending with a newline character.
+Output
+
+Median person or median persons, as explained above.
+Examples
+
+Input:
+Gilbert 35
+Anna 35
+Anna 15
+Mary 15
+Joseph 40
+
+Output:
+Anna 35
+
+Input:
+Gilbert 35
+Anna 35
+Andrew 35
+Anna 15
+Mary 15
+Joseph 40
+
+Output:
+Andrew 35
+Anna 35
+
+
