@@ -1,4 +1,5 @@
 import os
+import time
 from gdrive_auth import Create_Service
 from gdrive_utility import (
     get_existing_files_recursive,
@@ -21,24 +22,37 @@ def main():
 
     drive_service = Create_Service(OAUTH2_SECRET, API_TYPE, API_VERSION, SCOPES)
 
-    print("📝 Wczytywanie plików z Google Drive...")
+    # Fetch files from Google Drive
+    print("📝 Fetching existing files from Google Drive...")
+    start = time.perf_counter()
     existing_files = get_existing_files_recursive(GDRIVE_FOLDER_ID, drive_service)
+    end = time.perf_counter()
+    print(f"Finished fetching files: {end - start:.4f} seconds")
 
-    print("⬆️ Upload lokalnych plików...")
+    # Upload or update local files to Google Drive
+    print("⬆️ Uploading local files...")
+    start = time.perf_counter()
     upload_file_or_folder(
         local_base_path=LOCAL_FOLDER,
         parent_drive_folder_id=GDRIVE_FOLDER_ID,
         drive_service=drive_service,
         existing_items=existing_files
     )
+    end = time.perf_counter()
+    print(f"Finished uploading files: {end - start:.4f} seconds")
 
-    print("🧹 Usuwanie nieistniejących plików/folderów z Google Drive...")
+
+    # Delete files/folders not present locally
+    print("🧹 Deleting non-existent files/folders from Google Drive...")
+    start = time.perf_counter()
     delete_items_not_in_local(
         local_base_path=LOCAL_FOLDER,
         parent_drive_folder_id=GDRIVE_FOLDER_ID,
         drive_service=drive_service,
         existing_items=existing_files
     )
+    end = time.perf_counter()
+    print(f"Finished deleting non-existent items: {end - start:.4f} seconds")
 
 if __name__ == '__main__':
     main()
