@@ -7,6 +7,10 @@ on:
     paths:
       - 'paczka/**'
 
+concurrency:
+  group: gdrive-upload-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   upload:
     runs-on: ubuntu-latest
