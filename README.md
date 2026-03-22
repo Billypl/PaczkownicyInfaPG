@@ -13,7 +13,24 @@
 <br clear="both"/>
 
 <h1 align="center">Paczka Updater</h1>
+<h2 align="center"> UWAGA WAŻNE: paczka przeniesiona. </h2>
+<h2 align="center">W celu udzielania się zapraszamy na <a href="https://discord.gg/8MVeYzChkT"><img src="https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2" alt="Official Discord"/></a> </h2>
 
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
 <div align="center">
   <a href="https://youtu.be/tuTGdGo7trQ?si=UmZ2PyprnpxvG76_"><img src="https://img.shields.io/youtube/views/tuTGdGo7trQ?style=for-the-badge&logo=youtube&logoColor=red&label=tutorial%20views" alt="YouTube Views"/></a>&nbsp<a href="https://discord.gg/8MVeYzChkT"><img src="https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2" alt="Official Discord"/></a>
 </div>
@@ -56,16 +73,6 @@ W skrócie:
 7. Po jego zatwierdzeniu i trafieniu do mastera pliki są automatycznie uploadowane do folderu [Google Drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing)  
 
 Nie masz pomysłów, z czym możesz pomóc? Przeglądnij [issues](https://github.com/Billypl/PaczkownicyInfaPG/issues) z przykładowymi pomysłami.  
-
-## Aktualny postęp paczki
-Aktualny postęp paczki można zobaczyć w podanych poniżej issuse'ach:
-- [ ] [SEM1](https://github.com/Billypl/PaczkownicyInfaPG/issues/20) - x/x
-- [ ] [SEM2](https://github.com/Billypl/PaczkownicyInfaPG/issues/21) - x/x
-- [ ] [SEM3](https://github.com/Billypl/PaczkownicyInfaPG/issues/22) - x/x
-- [ ] [SEM4](https://github.com/Billypl/PaczkownicyInfaPG/issues/23) - x/x
-- [ ] [SEM5](https://github.com/Billypl/PaczkownicyInfaPG/issues/24) - x/x
-- [ ] [SEM6](https://github.com/Billypl/PaczkownicyInfaPG/issues/25) - x/x
-- [ ] [SEM7](https://github.com/Billypl/PaczkownicyInfaPG/issues/26) - x/x
 
 ## Uwagi
 - Przeczytać [wytyczne](/docs/wytyczne/wytyczne.md)! To jest bardzo ważne w celu minimalizacji poprawek!!
