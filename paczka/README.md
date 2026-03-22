@@ -1,1 +1,1 @@
-Przeniesiono do osobnego repozytorium - przejdź przez proces weryfikacyjny.
+Przeniesiono do osobnego repozytorium - przejdź przez proces weryfikacyjny (https://discord.gg/8MVeYzChkT).
