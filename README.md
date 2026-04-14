@@ -32,11 +32,8 @@
 .  
 .  
 <div align="center">
-  <a href="https://youtu.be/tuTGdGo7trQ?si=UmZ2PyprnpxvG76_"><img src="https://img.shields.io/youtube/views/tuTGdGo7trQ?style=for-the-badge&logo=youtube&logoColor=red&label=tutorial%20views" alt="YouTube Views"/></a>&nbsp<a href="https://discord.gg/8MVeYzChkT"><img src="https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2" alt="Official Discord"/></a>
-</div>
-
-<div align="center">
-    <a href="https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing"><img src="https://img.shields.io/badge/oficjalna_paczka-gdrive-white?style=for-the-badge&logo=googledrive&logoColor=4286f5&labelColor=fabd03&color=34a853" alt="YouTube Views"/></a>
+  <a href="https://youtu.be/tuTGdGo7trQ?si=UmZ2PyprnpxvG76_"><img src="https://img.shields.io/youtube/views/tuTGdGo7trQ?style=for-the-badge&logo=youtube&logoColor=red&label=tutorial%20views" alt="YouTube Views"/></a>&nbsp<a href="https://discord.gg/8MVeYzChkT"><img src="https://img.shields.io/badge/official_discord-join-%235865F2?style=for-the-badge&logo=discord&logoColor=%235865F2&color=%235865F2" alt="Official Discord"/>
+  </a>
 </div>
 <br>
 
