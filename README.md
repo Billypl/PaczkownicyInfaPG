@@ -39,7 +39,7 @@
 
 <div align="justify">
 
-Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na [google drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing). Dajcie gwiazdkę ⭐ na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
+Paczka Updater - czyli repozytorium na GitHubie, dzięki któremu praca nad paczką jest prostsza niż kiedykolwiek! Ściągnij repo do siebie, wrzuć materiały do folderu [paczka](paczka/) i wystaw pull requesta. Po zatwierdzeniu pliki automatycznie zostaną umieszczone na google drive. Dajcie gwiazdkę ⭐ na repozytorium GitHuba, żeby go nie zgubić. Dzięki za kontrybucje i mam nadzieję, że paczka będzie służyć!  
 </div>
 <div align="center">
   <p>
@@ -67,7 +67,7 @@ W skrócie:
 4. Pliki umieszczamy w `paczka/SEM[NR_SEMA]/NAZWA_PRZEDMIOTU`  
 5. Pushujemy pracę na swojego forka
 6. Po zakończeniu pracy wystawiamy Pull Request  
-7. Po jego zatwierdzeniu i trafieniu do mastera pliki są automatycznie uploadowane do folderu [Google Drive](https://drive.google.com/drive/folders/1AMJFl1pLO3EPuq6jlE4fCtxg1V4kvshv?usp=sharing)  
+7. Po jego zatwierdzeniu i trafieniu do mastera pliki są automatycznie uploadowane do folderu Google Drive. 
 
 Nie masz pomysłów, z czym możesz pomóc? Przeglądnij [issues](https://github.com/Billypl/PaczkownicyInfaPG/issues) z przykładowymi pomysłami.  
 
